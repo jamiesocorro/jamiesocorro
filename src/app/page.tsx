@@ -10,7 +10,7 @@ export default function Home() {
             JAMIE
           </div>
           <Image
-            src="/Avatar.png"
+            src="./Avatar.png"
             alt="Avatar"
             className="dark:invert"
             width={300}
@@ -43,7 +43,7 @@ export default function Home() {
               </Link>
 
               <Image
-                src="/Shiftbase.png"
+                src="./Shiftbase.png"
                 alt="Shiftbase"
                 className="dark:invert"
                 width={600}
@@ -78,7 +78,7 @@ export default function Home() {
               </Link>
 
               <Image
-                src="/Treatanyone.png"
+                src="./Treatanyone.png"
                 alt="Treatanyone"
                 className="dark:invert"
                 width={600}
@@ -115,7 +115,7 @@ export default function Home() {
               </Link>
 
               <Image
-                src="/Sunlife.png"
+                src="./Sunlife.png"
                 alt="Sunrise"
                 className="dark:invert"
                 width={600}
@@ -149,7 +149,7 @@ export default function Home() {
               </Link>
 
               <Image
-                src="/Arcadier.png"
+                src="./Arcadier.png"
                 alt="Arcadier"
                 className="dark:invert"
                 width={600}
@@ -184,7 +184,7 @@ export default function Home() {
               </Link>
 
               <Image
-                src="/Nissan.png"
+                src="./Nissan.png"
                 alt="Nissan"
                 className="dark:invert"
                 width={600}
