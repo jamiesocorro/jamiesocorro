@@ -8,7 +8,7 @@ export default function Lyra() {
         <div >
             <div className="flex items-center flex-col p-2 bg-black text-white">
                 <div className="font-bold text-5xl text-center m-2.5">Lyra</div>
-                <div className="font-bold text-l text-center m-5">200k+ followers</div>
+                <div className="font-bold text-l text-center m-5">200k+ followers on SocMed</div>
             </div>
             <div className="m-5">
 
@@ -49,19 +49,19 @@ export default function Lyra() {
                 </div>
 
                 <div className="mt-10">
-                    <div><b>Performances Youtube:</b> </div>
+                    <div><b>Performances Youtube Videos:</b> </div>
                     <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-2">
 
 
                         <YouTubePlayer videoId="DuXBEIZqdRw" />
-                        <YouTubePlayer videoId="GsP4lQetJ3c" />
-                        <YouTubePlayer videoId="uhm-NMhmUPU" />
+                        <YouTubePlayer videoId="4yebRZFbvQc" />
+                        <YouTubePlayer videoId="btSOjLV9nDc" />
                     </div>
                 </div>
 
 
                 <div className="mt-10">
-                    <div><b>Viral Tiktok  Youtube:</b> </div>
+                    <div><b>Viral Tiktok Videos:</b> </div>
 
                     <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-2">
 
