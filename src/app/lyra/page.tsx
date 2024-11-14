@@ -55,7 +55,7 @@ export default function Lyra() {
 
                         <YouTubePlayer videoId="DuXBEIZqdRw" />
                         <YouTubePlayer videoId="4yebRZFbvQc" />
-                        <YouTubePlayer videoId="btSOjLV9nDc" />
+                        <YouTubePlayer videoId="pMvqAfefTN0" />
                     </div>
                 </div>
 
