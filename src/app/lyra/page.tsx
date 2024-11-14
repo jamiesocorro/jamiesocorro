@@ -74,15 +74,10 @@ export default function Lyra() {
                     </div>
                 </div>
 
-
-
-
-
             </div>
 
             <div className="flex items-center flex-col p-2 bg-gray-900 text-white">
                 <ul className="font-bold text-xs sm:text-base">
-
                     <li className="mb-2">
                         📺  https://www.tiktok.com/@lyramicolob21
                     </li>
