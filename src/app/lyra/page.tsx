@@ -8,7 +8,8 @@ export default function Lyra() {
         <div >
             <div className="flex items-center flex-col p-2 bg-black text-white">
                 <div className="font-bold text-5xl text-center m-2.5">Lyra</div>
-                <div className="font-bold text-l text-center m-5">200k+ followers on SocMed</div>
+                <div className="font-bold text-l text-center mt-5">200k+ followers</div>
+                <div className="font-bold text-xs text-center m-2">(all social platforms)</div>
             </div>
             <div className="m-5">
 
@@ -40,13 +41,13 @@ export default function Lyra() {
                         <li>
                             🌟 2015 WCOPA Silver Medalist
                         </li>
-                        <li>
-                            🌟 Contact Me : 09668694962
-                        </li>
+
                     </ul>
 
 
                 </div>
+
+
 
                 <div className="mt-10">
                     <div><b>Performances Youtube Videos:</b> </div>
@@ -75,6 +76,24 @@ export default function Lyra() {
 
 
 
+
+
+            </div>
+
+            <div className="flex items-center flex-col p-2 bg-gray-900 text-white">
+                <ul className="font-bold text-xs sm:text-base">
+
+                    <li className="mb-2">
+                        📺  https://www.tiktok.com/@lyramicolob21
+                    </li>
+                    <li className="mb-2">
+
+                        📘  https://www.facebook.com/LyraMicolob/
+                    </li>
+                    <li className="mb-2">
+                        📱  Contact Me : 09668694962
+                    </li>
+                </ul>
 
 
             </div>
