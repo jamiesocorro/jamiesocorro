@@ -9,19 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@typescript-eslint/project-service": "^8.33.1",
+    "@typescript-eslint/tsconfig-utils": "^8.33.1",
+    "eslint-visitor-keys": "^4.2.0",
+    "next": "15.3.3",
     "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "next": "15.3.3"
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "19.1.6",
     "@types/react-dom": "19.1.5",
+    "eslint": "^8",
+    "eslint-config-next": "15.3.3",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "15.3.3"
+    "typescript": "^5"
   },
   "overrides": {
     "@types/react": "19.1.6",
