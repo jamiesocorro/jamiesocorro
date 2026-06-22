@@ -76,6 +76,126 @@ export default function Home() {
         <div className="bg-[#fafafa] p-6">
           <div className="grid  gap-x-4 gap-y-8 p-6 md:grid-cols-3">
             <div className="bg-white rounded-lg shadow-lg p-4">
+              <div>
+                <div className="w-full">
+                  <div className="mb-3 font-bold">
+                    One App Sports
+                  </div>
+
+                  <Link href="https://www.oneappsports.com/" target="_blank" rel="noopener noreferrer">
+                    <Image
+                      src="./OneAppSports.png"
+                      alt="One App Sports"
+                      className="dark:invert hover:opacity-80 transition-opacity"
+                      width={600}
+                      height={600}
+                      priority
+                    />
+                  </Link>
+                </div>
+
+                <div className="h-full ml-[20px] mt-[32px]">
+                  <div className="font-bold">Pickleball ranking, managing & booking app</div>
+                  <div className="text-[12px] text-[#a9a9a9]">
+                    One App Sports is a pickleball platform that lets competitive players log matches, climb global leaderboards, and connect with players in their area. Venue owners can manage courts and bookings while tracking player statistics through an XP-based ranking system. Visit <a href="https://www.oneappsports.com/" target="_blank" rel="noopener noreferrer" className="underline">oneappsports.com</a>.
+                  </div>
+                  <div className="text-[12px] mt-2">
+                    <div className="font-bold">
+                      Position: Senior Frontend Developer
+                    </div>
+                    <div>
+                      Technologies: ReactJS, React Native, Rails
+                    </div>
+
+                    <div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-lg p-4">
+              <div>
+                <div className="w-full">
+                  <div className="mb-3 font-bold">
+                    Lyra Micolob
+                  </div>
+
+                  <Link href="http://lyramicolob.space" target="_blank" rel="noopener noreferrer">
+                    <Image
+                      src="./Lyra.png"
+                      alt="Lyra Micolob"
+                      className="dark:invert hover:opacity-80 transition-opacity"
+                      width={600}
+                      height={600}
+                      priority
+                    />
+                  </Link>
+                </div>
+
+                <div className="h-full ml-[20px] mt-[32px]">
+                  <div className="font-bold">Artist profile website</div>
+                  <div className="text-[12px] text-[#a9a9a9]">
+                    Lyra Micolob is an artist profile website showcasing the work and portfolio of the artist Lyra Micolob. Visit <a href="http://lyramicolob.space" target="_blank" rel="noopener noreferrer" className="underline">lyramicolob.space</a>.
+                  </div>
+                  <div className="text-[12px] mt-2">
+                    <div className="font-bold">
+                      Position: Frontend Developer
+                    </div>
+                    <div>
+                      Technologies: WordPress, Elementor
+                    </div>
+
+                    <div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-lg p-4">
+              <div>
+                <div className="w-full">
+                  <div className="mb-3 font-bold">
+                    DIY EasyFit Shutters
+                  </div>
+
+                  <Link href="https://diyeasyfitshutters.com.au/" target="_blank" rel="noopener noreferrer">
+                    <Image
+                      src="./DiyEasyfit.png"
+                      alt="DIY EasyFit Shutters"
+                      className="dark:invert hover:opacity-80 transition-opacity"
+                      width={600}
+                      height={600}
+                      priority
+                    />
+                  </Link>
+                </div>
+
+                <div className="h-full ml-[20px] mt-[32px]">
+                  <div className="font-bold">Plantation shutters e-commerce website</div>
+                  <div className="text-[12px] text-[#a9a9a9]">
+                    DIY EasyFit Shutters is an Australian company selling affordable, easy-to-install plantation shutters for windows, offering PVC, poly, and aluminium-reinforced options with a 25-year warranty. Visit <a href="https://diyeasyfitshutters.com.au/" target="_blank" rel="noopener noreferrer" className="underline">diyeasyfitshutters.com.au</a>.
+                  </div>
+                  <div className="text-[12px] mt-2">
+                    <div className="font-bold">
+                      Position: Frontend Developer
+                    </div>
+                    <div>
+                      Technologies: WordPress, PHP, Elementor
+                    </div>
+
+                    <div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-lg p-4">
               <div> <div className="w-full">
                 <div className="mb-3 font-bold">
                   Projectler
@@ -296,7 +416,7 @@ export default function Home() {
                       Year: 2017-2019
                     </div>
                     <div>
-                      Technologies: ReactJS, Angular, TypeScript, Bootstrap, HTML, CSS,
+                      Technologies: Wordpress, ReactJS, Angular, TypeScript, Bootstrap, HTML, CSS,
                     </div>
 
 
@@ -359,6 +479,7 @@ export default function Home() {
 
               </div>
             </div>
+
 
           </div>
 
