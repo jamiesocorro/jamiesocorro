@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PPL — Professional People's Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0b0d;
+    --surface:#161417;
+    --surface-2:#1e1b1f;
+    --red:#d6392c;
+    --red-bright:#ef4c3c;
+    --gold:#e6b955;
+    --gold-bright:#f3ce7f;
+    --cream:#f3eee6;
+    --muted:#9d97a0;
+    --line: rgba(243,238,230,0.12);
+    --line-strong: rgba(243,238,230,0.22);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg); color:var(--cream); font-family:'Roboto',sans-serif; line-height:1.5; overflow-x:hidden;}
+  ::selection{background:var(--red); color:var(--cream);}
+  h1,h2,h3,.display{ font-family:'Roboto', sans-serif; font-weight:500; letter-spacing:-0.01em; }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .eyebrow{ font-family:'Roboto',sans-serif; text-transform:uppercase; letter-spacing:0.28em; font-size:11px; color:var(--gold); font-weight:700; }
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 40px; }
+  @media(max-width:640px){ .wrap{padding:0 22px;} }
+
+  .bulbs{ height:22px; width:100%; background: radial-gradient(circle 3px, var(--red) 92%, transparent 100%); background-size: 34px 22px; background-repeat: repeat-x; background-position: 17px center; opacity:0.55; position:relative; }
+  .bulbs::after{ content:''; position:absolute; inset:0; background: inherit; animation: twinkle 3.2s steps(2) infinite; }
+  @keyframes twinkle{ 0%,100%{opacity:0.3;} 50%{opacity:1;} }
+  @media (prefers-reduced-motion: reduce){ .bulbs::after{animation:none; opacity:0.7;} }
+
+  header{ position:fixed; top:0; left:0; right:0; z-index:100; padding:22px 0; transition:all .35s ease; }
+  header.scrolled{ background:rgba(12,11,13,0.9); backdrop-filter: blur(10px); padding:14px 0; border-bottom:1px solid var(--line); }
+  nav.wrap{ display:flex; align-items:center; justify-content:space-between; }
+  .logo-mark{ display:flex; align-items:center; gap:10px; }
+  .logo-mark .p{ font-family:'Roboto', sans-serif; font-weight:800; font-size:26px; color:var(--red); border:2px solid var(--red); width:38px; height:38px; display:flex; align-items:center; justify-content:center; }
+  .logo-text{ display:flex; flex-direction:column; line-height:1.05; }
+  .logo-text .ppl{ font-family:'Roboto', sans-serif; font-weight:700; font-size:20px; color:var(--red); letter-spacing:0.02em; }
+  .logo-text .sub{ font-size:8.5px; letter-spacing:0.18em; color:var(--gold); text-transform:uppercase; font-weight:600; }
+  .nav-links{ display:flex; gap:34px; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; font-weight:600; }
+  .nav-links a{ color:var(--muted); position:relative; padding-bottom:4px; transition:color .25s ease; }
+  .nav-links a:hover{color:var(--cream);}
+  .nav-links a::after{ content:''; position:absolute; left:0; bottom:0; width:0%; height:1px; background:var(--red); transition:width .3s ease; }
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{ border:1px solid var(--line-strong); padding:9px 18px; font-size:11.5px; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; transition:all .25s ease; }
+  .nav-cta:hover{ border-color:var(--red); color:var(--red); }
+  @media(max-width:900px){ .nav-links{display:none;} }
+
+  /* ---- HERO: wall of stars ---- */
+  .hero{ position:relative; height:100svh; min-height:640px; overflow:hidden; display:flex; align-items:center; justify-content:center; }
+  .wall{ position:absolute; inset:0; display:flex; gap:14px; padding:100px 0; filter:saturate(0.9); }
+  .wall-col{ display:flex; flex-direction:column; gap:14px; flex:1; animation: driftUp 60s linear infinite; }
+  .wall-col.down{ animation-name: driftDown; }
+  @keyframes driftUp{ from{transform:translateY(0);} to{transform:translateY(-50%);} }
+  @keyframes driftDown{ from{transform:translateY(-50%);} to{transform:translateY(0);} }
+  @media (prefers-reduced-motion: reduce){ .wall-col{animation:none;} }
+  .tile{ aspect-ratio:3/4; border:1px solid var(--line); position:relative; flex-shrink:0; display:flex; align-items:flex-end; padding:12px; overflow:hidden; }
+  .tile .init{ font-family:'Roboto', sans-serif; font-size:15px; color:var(--cream); position:relative; z-index:2; }
+  .tile .role{ display:block; font-size:8px; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); margin-top:2px; position:relative; z-index:2; }
+  .tile::before{ content:''; position:absolute; inset:0; background: linear-gradient(200deg, rgba(214,57,44,0.28), rgba(22,20,23,0.9) 65%); }
+  .tile::after{ content:''; position:absolute; inset:0; background:linear-gradient(0deg, rgba(0,0,0,0.75) 5%, transparent 55%); }
+  .hero-scrim{ position:absolute; inset:0; background: radial-gradient(ellipse 60% 55% at 50% 48%, rgba(12,11,13,0.94), rgba(12,11,13,0.55) 55%, rgba(12,11,13,0.9) 100%); z-index:2; }
+  .hero-inner{ position:relative; z-index:3; text-align:center; padding:0 24px; }
+  .hero .eyebrow{display:block; margin-bottom:18px;}
+  .hero h1{ font-size:clamp(42px, 8vw, 96px); line-height:0.98; color:var(--cream); }
+  .hero h1 .accent{ color:var(--red); }
+  .hero p.sub{ max-width:520px; margin:26px auto 0; color:var(--muted); font-size:15.5px; }
+  .hero-ctas{ margin-top:38px; display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+  .btn{ padding:15px 30px; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; display:inline-block; transition:all .3s ease; border:1px solid transparent; }
+  .btn-red{ background:var(--red); color:#fff; }
+  .btn-red:hover{ background:var(--red-bright); transform:translateY(-2px); }
+  .btn-line{ border-color:var(--line-strong); color:var(--cream); }
+  .btn-line:hover{ border-color:var(--gold); color:var(--gold); }
+  .scroll-cue{ position:absolute; bottom:26px; left:50%; transform:translateX(-50%); z-index:3; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); display:flex; flex-direction:column; align-items:center; gap:8px; }
+  .scroll-cue .stem{ width:1px; height:30px; background:linear-gradient(var(--gold), transparent); }
+
+  section{padding:120px 0;}
+  @media(max-width:640px){ section{padding:80px 0;} }
+  .section-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:40px; margin-bottom:64px; border-bottom:1px solid var(--line); padding-bottom:28px; }
+  .section-head h2{ font-size:clamp(32px, 4vw, 50px); margin-top:8px; }
+  .section-head p{ color:var(--muted); max-width:340px; font-size:14px; padding-bottom:6px; }
+
+  .about{background:var(--surface);}
+  .about-grid{ display:grid; grid-template-columns: 0.8fr 1.2fr; gap:76px; align-items:center; }
+  @media(max-width:860px){ .about-grid{grid-template-columns:1fr; gap:44px;} }
+  .portrait{ aspect-ratio:3/4; background: linear-gradient(160deg,#241d1f,#161417 60%), radial-gradient(circle at 30% 20%, rgba(214,57,44,0.32), transparent 55%); border:1px solid var(--line-strong); position:relative; display:flex; align-items:flex-end; padding:26px; }
+  .portrait.has-photo{ background-image: linear-gradient(0deg, rgba(12,11,13,0.9) 10%, transparent 45%), url('/PPL.jpg'); background-size:cover; background-position:center top; }
+  .portrait .mono{ font-family:'Roboto', sans-serif; font-size:110px; color:rgba(243,238,230,0.08); position:absolute; top:18px; right:18px; line-height:1; }
+  .portrait .cap{ font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); border-top:1px solid var(--line-strong); padding-top:13px; width:100%; }
+  .about-copy .eyebrow{margin-bottom:16px;}
+  .about-copy h2{ font-size:clamp(30px,3.8vw,42px); margin-bottom:22px; line-height:1.1; }
+  .about-copy p{ color:var(--muted); font-size:15px; max-width:540px; margin-bottom:16px; }
+  blockquote{ font-family:'Roboto', sans-serif; font-style:italic; font-size:20px; color:var(--cream); border-left:2px solid var(--red); padding-left:22px; margin:28px 0; max-width:490px; }
+  blockquote cite{ display:block; font-style:normal; font-family:'Roboto',sans-serif; font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-top:10px; }
+  .stat-row{ display:flex; gap:42px; margin-top:40px; border-top:1px solid var(--line); padding-top:28px; flex-wrap:wrap; }
+  .stat-row div h3{ font-size:30px; color:var(--red); font-weight:500; }
+  .stat-row div span{ font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); }
+
+  .impact{ background: linear-gradient(180deg, var(--bg), #120f11); text-align:center; padding:90px 0; }
+  .impact .num{ font-family:'Roboto', sans-serif; font-size:clamp(54px,9vw,110px); color:var(--gold); line-height:1; }
+  .impact .label{ margin-top:14px; color:var(--muted); font-size:14px; letter-spacing:0.04em; }
+
+  /* ---- ROSTER: card grid like VAA's artist gallery ---- */
+  .roster{background:var(--bg);}
+  .tabs{ display:flex; gap:10px; flex-wrap:wrap; }
+  .tab{ padding:11px 20px; font-size:11.5px; letter-spacing:0.11em; text-transform:uppercase; font-weight:700; border:1px solid var(--line-strong); color:var(--muted); cursor:pointer; background:none; transition:all .25s ease; font-family:inherit; }
+  .tab.active, .tab:hover{ color:#fff; background:var(--red); border-color:var(--red); }
+  .roster-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:56px; }
+  @media(max-width:920px){ .roster-grid{grid-template-columns:repeat(3,1fr);} }
+  @media(max-width:640px){ .roster-grid{grid-template-columns:repeat(2,1fr); gap:14px; margin-top:36px;} }
+  .card{ position:relative; }
+  .card .frame{ aspect-ratio:3/4; border:1px solid var(--line-strong); position:relative; overflow:hidden; display:flex; align-items:flex-end; padding:16px; transition:border-color .3s ease, transform .3s ease; }
+  .card .frame::before{ content:''; position:absolute; inset:0; }
+  .card:nth-child(5n+1) .frame::before{ background:linear-gradient(200deg, rgba(214,57,44,0.35), rgba(22,20,23,0.95) 65%); }
+  .card:nth-child(5n+2) .frame::before{ background:linear-gradient(200deg, rgba(230,185,85,0.28), rgba(22,20,23,0.95) 65%); }
+  .card:nth-child(5n+3) .frame::before{ background:linear-gradient(200deg, rgba(157,151,160,0.28), rgba(22,20,23,0.95) 65%); }
+  .card:nth-child(5n+4) .frame::before{ background:linear-gradient(200deg, rgba(214,57,44,0.2), rgba(22,20,23,0.95) 65%); }
+  .card:nth-child(5n+5) .frame::before{ background:linear-gradient(200deg, rgba(230,185,85,0.18), rgba(22,20,23,0.95) 65%); }
+  .card:hover .frame{ border-color:var(--gold); transform:translateY(-4px); }
+  .card .frame.has-photo::before{ background:none; }
+  .tile.has-photo::before{ background:none; }
+  .card .init{ font-family:'Roboto', sans-serif; font-size:20px; position:relative; z-index:2; color:var(--cream); }
+  .card .name{ margin-top:14px; font-size:16px; font-weight:500; font-family:'Roboto', sans-serif; }
+  .card .role{ margin-top:3px; font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; }
+  .card .tag{ position:absolute; top:12px; left:12px; z-index:2; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); border:1px solid rgba(230,185,85,0.4); padding:4px 9px; background:rgba(12,11,13,0.4); }
+
+  .team{background:var(--surface);}
+  .dept-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+  @media(max-width:760px){ .dept-grid{grid-template-columns:1fr;} }
+  .dept-card{ background:var(--surface); padding:34px 30px; }
+  .dept-card h4{ font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--red); font-weight:700; margin-bottom:20px; }
+  .person{ display:flex; justify-content:space-between; gap:16px; padding:12px 0; border-top:1px solid var(--line); }
+  .person:first-of-type{border-top:none;}
+  .person .name{ font-size:15.5px; color:var(--cream); }
+  .person .title{ font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; text-align:right; }
+
+  .brands{background:var(--bg); padding:100px 0;}
+  .brands .section-head{margin-bottom:44px;}
+  .marquee-track{ overflow:hidden; border-bottom:1px solid var(--line); padding:22px 0; }
+  .wrap + .marquee-track{ border-top:1px solid var(--line); }
+  .marquee-inner{ display:flex; gap:28px; width:max-content; align-items:center; animation: scroll 70s linear infinite; }
+  .marquee-inner.reverse{ animation-direction: reverse; }
+  .marquee-track:hover .marquee-inner{ animation-play-state: paused; }
+  @keyframes scroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  .brand-logo{ display:flex; align-items:center; justify-content:center; flex-shrink:0; background:#fff; border-radius:10px; height:64px; width:150px; padding:10px 18px; }
+  .brand-logo img{ max-height:100%; max-width:100%; object-fit:contain; }
+
+  .capabilities{background:var(--surface); text-align:center;}
+  .cap-list{ display:flex; flex-wrap:wrap; justify-content:center; gap:14px; margin-top:10px; }
+  .cap-pill{ border:1px solid var(--line-strong); padding:12px 24px; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--cream); }
+
+  /* ---- sub-brand strip, VAA-style ---- */
+  .subbrands{ background:var(--bg); padding:56px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .subbrands .wrap{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:24px; }
+  .subbrands .lead{ font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); }
+  .subbrand-links{ display:flex; gap:32px; flex-wrap:wrap; }
+  .subbrand-links a{ font-family:'Roboto', sans-serif; font-size:16px; color:var(--cream); border-bottom:1px solid transparent; padding-bottom:2px; transition:border-color .25s ease, color .25s ease; }
+  .subbrand-links a:hover{ color:var(--gold); border-color:var(--gold); }
+
+  footer{background:var(--bg);}
+  .contact-cta{ padding:120px 0 90px; text-align:center; }
+  .contact-cta h2{ font-size:clamp(34px, 5.4vw, 66px); max-width:760px; margin:0 auto 30px; line-height:1.08; }
+  .contact-cta h2 em{color:var(--red); font-style:italic;}
+  .footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:36px; padding:64px 0 46px; border-top:1px solid var(--line); }
+  @media(max-width:800px){ .footer-grid{grid-template-columns:1fr 1fr; row-gap:40px;} }
+  .footer-grid p{ color:var(--muted); font-size:13px; max-width:260px; margin-top:12px; }
+  .footer-col h5{ font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--red); margin-bottom:16px; font-weight:700; }
+  .footer-col a{ display:block; color:var(--muted); font-size:13.5px; margin-bottom:10px; transition:color .25s ease; }
+  .footer-col a:hover{color:var(--cream);}
+  .footer-bottom{ display:flex; justify-content:space-between; align-items:center; padding:24px 0; border-top:1px solid var(--line); font-size:11.5px; color:var(--muted); flex-wrap:wrap; gap:12px; }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <nav class="wrap">
+    <a href="#top" class="logo-mark">
+      <div class="p">P</div>
+      <div class="logo-text"><span class="ppl">PPL</span><span class="sub">Professional People's Lab</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="#about">Company</a>
+      <a href="#roster">Roster</a>
+      <a href="#team">Team</a>
+      <a href="#brands">Brands</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="nav-cta">Work With Us</a>
+  </nav>
+</header>
+
+<div id="top"></div>
+
+<section class="hero">
+  <div class="wall" id="wall"></div>
+  <div class="hero-scrim"></div>
+  <div class="hero-inner">
+    <span class="eyebrow">Talent Management &amp; Talent Development — 17th Year</span>
+    <h1>The home<span class="accent"> of the work.</span></h1>
+    <p class="sub">PPL — Professional People's Lab — is the Talent Management and Talent Development vertical of The Doorbell Collective, evolved from the namesake company of our President &amp; CEO, Perry P. Lansigan.</p>
+    <div class="hero-ctas">
+      <a href="#roster" class="btn btn-red">Discover Our Roster</a>
+      <a href="#contact" class="btn btn-line">Partner With Us</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><span class="stem"></span></div>
+</section>
+<div class="bulbs"></div>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="portrait has-photo">
+      <div class="cap">Perry P. Lansigan — President &amp; CEO</div>
+    </div>
+    <div class="about-copy">
+      <span class="eyebrow">Company Profile</span>
+      <h2>PPL is the captain of PPL's ship.</h2>
+      <p>Perry P. Lansigan started his career as a trainee at GMA Network more than thirty years ago — work so commendable the network kept him on. That origin story became the foundation for a company built on one conviction: hard work pays off.</p>
+      <p>Today PPL represents a curated roster of actors, hosts, musicians, dancers, and public figures, backed by a team of managers, handlers, creatives, finance, and legal professionals who run the business behind the talent.</p>
+      <blockquote>
+        "Ako ang utak, ikaw ang puso." <span style="font-style:normal; font-size:14px; color:var(--muted);">— on the partnership between PPL and Creative Director Hazel Abonita Rivera</span>
+        <cite>Perry P. Lansigan, President &amp; CEO</cite>
+      </blockquote>
+      <div class="stat-row">
+        <div><h3>17</h3><span>Years as PPL</span></div>
+        <div><h3>30+</h3><span>Yrs Industry Roots</span></div>
+        <div><h3>20+</h3><span>Artists Represented</span></div>
+        <div><h3>143M</h3><span>Combined Followers</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="impact">
+  <div class="wrap">
+    <div class="num">143 Million</div>
+    <div class="label">combined followers across all platforms — Artists &amp; PPL Team</div>
+  </div>
+</section>
+
+<section class="roster" id="roster">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow">The Roster</span><h2>Our Artists</h2></div>
+      <p>Prime Artists, PPL Artists, and Performers — actors, hosts, singers, dancers, and groups.</p>
+    </div>
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-filter="all">All</button>
+      <button class="tab" data-filter="prime">Prime Artists</button>
+      <button class="tab" data-filter="ppl">PPL Artists</button>
+      <button class="tab" data-filter="performer">Performers</button>
+    </div>
+    <div class="roster-grid" id="rosterGrid"></div>
+  </div>
+</section>
+
+<section class="team" id="team">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow">Behind The Roster</span><h2>Our Team</h2></div>
+      <p>An eclectic mix of seasoned and fresh industry practitioners running the business behind every artist.</p>
+    </div>
+    <div class="dept-grid">
+      <div class="dept-card">
+        <h4>Executive Leadership</h4>
+        <div class="person"><span class="name">Perry P. Lansigan</span><span class="title">President &amp; CEO</span></div>
+        <div class="person"><span class="name">Apples Arizabal-Eigenmann</span><span class="title">Senior Business Unit Head</span></div>
+        <div class="person"><span class="name">Hazel Abonita Rivera</span><span class="title">Creative Director</span></div>
+        <div class="person"><span class="name">Paolo Luciano</span><span class="title">Executive Liaison</span></div>
+      </div>
+      <div class="dept-card">
+        <h4>Business Units</h4>
+        <div class="person"><span class="name">Ferdie Fiegalan</span><span class="title">Business Unit Head</span></div>
+        <div class="person"><span class="name">Luj Velayo</span><span class="title">Business Unit Head</span></div>
+      </div>
+      <div class="dept-card">
+        <h4>Artist Relations &amp; Handlers</h4>
+        <div class="person"><span class="name">Mike Anota</span><span class="title">Road Manager</span></div>
+        <div class="person"><span class="name">Siam Grant</span><span class="title">Handler / Road Manager</span></div>
+        <div class="person"><span class="name">Katt Leganson</span><span class="title">Handler / Road Manager</span></div>
+        <div class="person"><span class="name">Joshua Carino</span><span class="title">Handler</span></div>
+        <div class="person"><span class="name">Carlo Borral</span><span class="title">Handler</span></div>
+      </div>
+      <div class="dept-card">
+        <h4>Digital &amp; Social</h4>
+        <div class="person"><span class="name">Joseph "Otep" Marcellana</span><span class="title">Digital Manager</span></div>
+        <div class="person"><span class="name">Markky Villacarlos</span><span class="title">Social Media Specialist</span></div>
+      </div>
+      <div class="dept-card">
+        <h4>Finance &amp; Legal</h4>
+        <div class="person"><span class="name">Arvie Yumul</span><span class="title">Finance Manager</span></div>
+        <div class="person"><span class="name">Atty. Alaine Palomo</span><span class="title">Company Lawyer</span></div>
+        <div class="person"><span class="name">Atty. Melodie Esquejo</span><span class="title">Company Lawyer / CPA</span></div>
+        <div class="person"><span class="name">Benjie Mendoza</span><span class="title">Accountant</span></div>
+      </div>
+      <div class="dept-card">
+        <h4>Publicity</h4>
+        <div class="person"><span class="name">Rose Garcia</span><span class="title">Publicist</span></div>
+        <div class="person"><span class="name">Random Republika / Kate Adajar</span><span class="title">Digital Publicist</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="capabilities">
+  <div class="wrap">
+    <span class="eyebrow">17 Years In The Industry</span>
+    <h2 style="margin-top:12px; font-size:clamp(28px,3.6vw,42px);">Successfully Created &amp; Executed</h2>
+    <div class="cap-list">
+      <span class="cap-pill">Concerts</span>
+      <span class="cap-pill">Movies</span>
+      <span class="cap-pill">Mall Shows</span>
+      <span class="cap-pill">Events</span>
+      <span class="cap-pill">Awards Nights</span>
+      <span class="cap-pill">Corporate Events</span>
+      <span class="cap-pill">Political Campaigns</span>
+      <span class="cap-pill">Product Launches</span>
+    </div>
+  </div>
+</section>
+
+<section class="brands" id="brands">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow">Trusted By</span><h2>Affiliated Brands</h2></div>
+      <p>A selection of the brand partnerships our artists and roster have worked with.</p>
+    </div>
+  </div>
+  <div class="marquee-track">
+    <div class="marquee-inner" id="marqueeInnerA">
+      <span class="brand-logo"><img src="/brands/medicol-advance.png" alt="Medicol Advance" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/neurogen-e.png" alt="Neurogen-E" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/555-sardines.png" alt="555 Sardines" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/sbg-salveo-barley-grass.png" alt="SBG Salveo Barley Grass" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/bounty-fresh.png" alt="Bounty Fresh" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/gac-motor.png" alt="GAC Motor" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/mcdonalds.png" alt="McDonald's" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/asialink-finance.png" alt="Asialink Finance" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/kopiko.png" alt="Kopiko" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/san-marino.png" alt="San Marino" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/safeguard.png" alt="Safeguard" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/haier.png" alt="Haier" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/belo.png" alt="Belo" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/five-star-chicken.png" alt="Five Star Chicken" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/netflix.png" alt="Netflix" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/jollibee.png" alt="Jollibee" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/coca-cola.png" alt="Coca-Cola" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/bench.png" alt="Bench" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/jolly-eats.png" alt="Jolly Eats" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/nwow.png" alt="NWOW" loading="lazy"></span>
+    </div>
+  </div>
+  <div class="marquee-track">
+    <div class="marquee-inner reverse" id="marqueeInnerB">
+      <span class="brand-logo"><img src="/brands/caltex.png" alt="Caltex" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/bet88.png" alt="BET88" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/shopee.png" alt="Shopee" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/jc-organic-barley.png" alt="JC Organic Barley" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/bingo-plus.png" alt="Bingo Plus" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/siomai-king.png" alt="Siomai King" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/bioderm.png" alt="Bioderm" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/smart.png" alt="Smart" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/beautywise.png" alt="Beautywise" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/met-tathione.png" alt="MET Tathione" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/gcash.png" alt="GCash" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/cignal.png" alt="Cignal" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/rsg-ready-set-glow.png" alt="RSG Ready Set Glow" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/mesa.png" alt="Mesa" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/infinix.png" alt="Infinix" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/goldilocks.png" alt="Goldilocks" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/wilkins.png" alt="Wilkins" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/omron.png" alt="Omron" loading="lazy"></span>
+      <span class="brand-logo"><img src="/brands/uno-factory-outlet.png" alt="UNO Factory Outlet" loading="lazy"></span>
+    </div>
+  </div>
+</section>
+
+<div class="subbrands">
+  <div class="wrap">
+    <span class="lead">A Vertical Of The Doorbell Collective</span>
+    <div class="subbrand-links">
+      <a href="#top">PPL — Talent</a>
+      <a href="#brands">Brand Partnerships</a>
+      <a href="#contact">Press &amp; Bookings</a>
+    </div>
+  </div>
+</div>
+
+<div class="bulbs"></div>
+<footer id="contact">
+  <div class="wrap contact-cta">
+    <span class="eyebrow">Let's Talk</span>
+    <h2>Represented right, <em>discovered</em> everywhere.</h2>
+    <div class="hero-ctas">
+      <a href="mailto:hello@ppl-lab.com" class="btn btn-red">Submit Your Reel</a>
+      <a href="mailto:press@ppl-lab.com" class="btn btn-line">Press Inquiries</a>
+    </div>
+  </div>
+
+  <div class="wrap footer-grid">
+    <div>
+      <a href="#top" class="logo-mark">
+        <div class="p">P</div>
+        <div class="logo-text"><span class="ppl">PPL</span><span class="sub">Professional People's Lab</span></div>
+      </a>
+      <p>Talent Management &amp; Talent Development vertical of The Doorbell Collective.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Agency</h5>
+      <a href="#about">Company</a>
+      <a href="#roster">Roster</a>
+      <a href="#team">Team</a>
+      <a href="#brands">Brands</a>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <a href="mailto:hello@ppl-lab.com">hello@ppl-lab.com</a>
+      <a href="#">Manila, Philippines</a>
+    </div>
+    <div class="footer-col">
+      <h5>Follow</h5>
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">YouTube</a>
+    </div>
+  </div>
+
+  <div class="wrap footer-bottom">
+    <span>© 2026 PPL — Professional People's Lab. All rights reserved.</span>
+    <span>A vertical of The Doorbell Collective.</span>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40));
+
+  // ---- Roster data (single source, drives hero wall + roster grid) ----
+  const roster = [
+    {name:"Dingdong Dantes", role:"Actor, Director & Host", cat:"prime", tag:"Prime Artist", photo:"/dindongdantes.jpg"},
+    {name:"Ivana Alawi", role:"Actress, Model & YouTuber", cat:"prime", tag:"Prime Artist", photo:"/ivanaalawi.jpg"},
+    {name:"Gabby Eigenmann", role:"Actor, Singer & Host", cat:"prime", tag:"Prime Artist", photo:"/gabbyeigenmann.jpg"},
+    {name:"Max Collins", role:"Actress & Model", cat:"prime", tag:"Prime Artist", photo:"/maxcollins.jpg"},
+    {name:"Rochelle Pangilinan", role:"Actress, Dancer & Singer", cat:"prime", tag:"Prime Artist", photo:"/rochellepangilinan.jpg"},
+    {name:"Carlo Gonzalez", role:"Prime Artist", cat:"prime", tag:"Prime Artist", photo:"/carlogonzales.jpg"},
+    {name:"Arthur Solinap", role:"Actor & Dancer", cat:"prime", tag:"Prime Artist", photo:"/arthursolinap.jpg"},
+    {name:"Paul Salas", role:"Prime Artist", cat:"prime", tag:"Prime Artist", photo:"/paulsalas.jpg"},
+    {name:"Wendell Ramos", role:"Actor", cat:"prime", tag:"Prime Artist", photo:"/wendellramos.jpg"},
+    {name:"Nikki Van", role:"Model & TV Personality", cat:"ppl", tag:"PPL Artist", photo:"/nikkivan.jpg"},
+    {name:"Jennie Gabriel", role:"Singer, Comedienne & Impersonator", cat:"ppl", tag:"PPL Artist", photo:"/jenniegabriel.jpg"},
+    {name:"Kobe Medalla", role:"PPL Artist", cat:"ppl", tag:"PPL Artist", photo:"/kobemedalla.jpg"},
+    {name:"Elio Wrick", role:"International Hockey Player", cat:"ppl", tag:"Athlete", photo:"/eliowrick.jpg"},
+    {name:"Lyra Micolob", role:"Alto Soul Singer", cat:"ppl", tag:"PPL Artist", photo:"/lyramicolob.jpg"},
+    {name:"Raven Molina", role:"PPL Artist", cat:"ppl", tag:"PPL Artist", photo:"/ravenmolina.jpg"},
+    {name:"Mitzi Josh", role:"PPL Artist", cat:"ppl", tag:"PPL Artist", photo:"/mitzijosh.jpg"},
+    {name:"Kiel & Vito Gueco", role:"PPL Artists", cat:"ppl", tag:"PPL Artists", photo:"/kielvitogueco.jpg"},
+    {name:"Cody Jardiniano", role:"PPL Artist", cat:"ppl", tag:"PPL Artist", photo:"/codyjardiniano.jpg"},
+    {name:"1621", role:"P-pop Boy Group", cat:"performer", tag:"Group", photo:"/1621.JPG"},
+    {name:"El Manu & Jessy Kang", role:"Performers", cat:"performer", tag:"Performers", photo:"/elmanu.jpg"},
+    {name:"Lyra Micolob", role:"Alto Soul Singer", cat:"performer", tag:"Performer", photo:"/lyramicolob.jpg"},
+    {name:"Mitzi Josh", role:"Performer", cat:"performer", tag:"Performer", photo:"/mitzijosh.jpg"},
+    {name:"BRB", role:"Before Rain Begin", cat:"performer", tag:"Band", photo:"/brb.jpg"},
+  ];
+
+  const initials = n => n.split(/\s|&/).filter(Boolean).slice(0,2).map(w=>w[0]).join('').toUpperCase();
+
+  // roster grid
+  const grid = document.getElementById('rosterGrid');
+  roster.forEach(a => {
+    const el = document.createElement('div');
+    el.className = 'card';
+    el.dataset.cat = a.cat;
+    const photoStyle = a.photo ? ` style="background-image:url('${a.photo}');background-size:cover;background-position:center top;"` : '';
+    el.innerHTML = `
+      <div class="frame${a.photo ? ' has-photo' : ''}"${photoStyle}>
+        <span class="tag">${a.tag}</span>
+        ${a.photo ? '' : `<span class="init">${initials(a.name)}</span>`}
+      </div>
+      <div class="name">${a.name}</div>
+      <div class="role">${a.role}</div>`;
+    grid.appendChild(el);
+  });
+
+  const tabs = document.querySelectorAll('.tab');
+  const cards = () => document.querySelectorAll('.card');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const filter = tab.dataset.filter;
+      cards().forEach(c => { c.style.display = (filter === 'all' || c.dataset.cat === filter) ? '' : 'none'; });
+    });
+  });
+
+  // hero wall — five columns, alternating drift direction, doubled for seamless loop
+  const wall = document.getElementById('wall');
+  const colCount = 5;
+  for (let c = 0; c < colCount; c++) {
+    const col = document.createElement('div');
+    col.className = 'wall-col' + (c % 2 ? ' down' : '');
+    const items = [];
+    for (let i = 0; i < 6; i++) items.push(roster[(c * 6 + i) % roster.length]);
+    const renderTile = a => `<div class="tile${a.photo ? ' has-photo' : ''}"${a.photo ? ` style="background-image:url('${a.photo}');background-size:cover;background-position:center top;"` : ''}><div><span class="init">${a.name}</span><span class="role">${a.tag}</span></div></div>`;
+    col.innerHTML = items.map(renderTile).join('') + items.map(renderTile).join('');
+    wall.appendChild(col);
+  }
+
+  // brands marquee loop, two rows drifting opposite directions
+  ['marqueeInnerA', 'marqueeInnerB'].forEach(id => {
+    const m = document.getElementById(id);
+    m.innerHTML += m.innerHTML;
+  });
+</script>
+
+</body>
+</html>
