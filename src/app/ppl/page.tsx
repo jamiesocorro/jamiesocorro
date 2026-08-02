@@ -6,7 +6,7 @@ const samples = [
     name: "PPL — Professional People's Lab",
     description:
       "A talent management agency concept site with an animated hero wall, filterable artist roster, and a scrolling brand marquee.",
-    href: "/samples/ppl-professional-peoples-lab.html",
+    href: "/samples/ppl-professional-peoples-lab/",
   },
 ];
 
