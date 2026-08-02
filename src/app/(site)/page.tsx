@@ -115,7 +115,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow-lg p-4">
+            <div className="hidden bg-white rounded-lg shadow-lg p-4">
               <div>
                 <div className="w-full">
                   <div className="mb-3 font-bold">

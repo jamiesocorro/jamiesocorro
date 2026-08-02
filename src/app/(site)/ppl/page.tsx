@@ -8,6 +8,13 @@ const samples = [
       "A talent management agency concept site with an animated hero wall, filterable artist roster, and a scrolling brand marquee.",
     href: "/samples/ppl-professional-peoples-lab/",
   },
+  {
+    number: "02",
+    name: "PPL — We Manage Talent, Build Careers, Create Impact",
+    description:
+      "A bright, editorial artist-agency homepage with a bold headline hero, dark 'About PPL' pillars, a 5-icon services grid, and a scrollable artist carousel.",
+    href: "/samples/ppl-artist-showcase/",
+  },
 ];
 
 export default function Ppl() {
