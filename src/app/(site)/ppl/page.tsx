@@ -15,6 +15,13 @@ const samples = [
       "A bright, editorial artist-agency homepage with a bold headline hero, dark 'About PPL' pillars, a 5-icon services grid, and a scrollable artist carousel.",
     href: "/samples/ppl-artist-showcase/",
   },
+  {
+    number: "03",
+    name: "PPL — We Represent Extraordinary.",
+    description:
+      "A luxury black-and-gold entertainment agency homepage with an elegant serif headline, moody spotlit hero, a monochrome talent carousel, and a press-mentions strip.",
+    href: "/samples/ppl-luxury-agency/",
+  },
 ];
 
 export default function Ppl() {
