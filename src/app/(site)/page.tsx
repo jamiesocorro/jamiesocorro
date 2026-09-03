@@ -101,7 +101,7 @@ export default function Home() {
                   </div>
                   <div className="text-[12px] mt-2">
                     <div className="font-bold">
-                      Position: Senior Frontend Developer
+                      Position: CEO and Senior Frontend Developer
                     </div>
                     <div>
                       Technologies: ReactJS, React Native, Rails
