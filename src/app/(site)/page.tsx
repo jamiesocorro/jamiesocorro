@@ -13,7 +13,6 @@ export default function Home() {
                   <Image
                     src="./dev-icon.png"
                     alt="Avatar"
-                    className="dark:invert"
                     width={50}
                     height={50}
                     priority
@@ -50,7 +49,6 @@ export default function Home() {
                 <Image
                   src="./Avatar.gif"
                   alt="Avatar"
-                  className="dark:invert"
                   width={300}
                   height={300}
                   priority
@@ -86,7 +84,7 @@ export default function Home() {
                     <Image
                       src="./OneAppSports.png"
                       alt="One App Sports"
-                      className="dark:invert hover:opacity-80 transition-opacity"
+                      className="hover:opacity-80 transition-opacity"
                       width={600}
                       height={600}
                       priority
@@ -126,7 +124,7 @@ export default function Home() {
                     <Image
                       src="./Lyra.png"
                       alt="Lyra Micolob"
-                      className="dark:invert hover:opacity-80 transition-opacity"
+                      className="hover:opacity-80 transition-opacity"
                       width={600}
                       height={600}
                       priority
@@ -166,7 +164,7 @@ export default function Home() {
                     <Image
                       src="./DiyEasyfit.png"
                       alt="DIY EasyFit Shutters"
-                      className="dark:invert hover:opacity-80 transition-opacity"
+                      className="hover:opacity-80 transition-opacity"
                       width={600}
                       height={600}
                       priority
@@ -205,7 +203,7 @@ export default function Home() {
                   <Image
                     src="./Projectler.png"
                     alt="Projectler"
-                    className="dark:invert hover:opacity-80 transition-opacity"
+                    className="hover:opacity-80 transition-opacity"
                     width={600}
                     height={600}
                     priority
@@ -249,7 +247,7 @@ export default function Home() {
                     <Image
                       src="./Shiftbase.png"
                       alt="Shiftbase"
-                      className="dark:invert hover:opacity-80 transition-opacity"
+                      className="hover:opacity-80 transition-opacity"
                       width={600}
                       height={600}
                       priority
@@ -295,7 +293,7 @@ export default function Home() {
                     <Image
                       src="./Treatanyone.png"
                       alt="Treatanyone"
-                      className="dark:invert hover:opacity-80 transition-opacity"
+                      className="hover:opacity-80 transition-opacity"
                       width={600}
                       height={600}
                       priority
@@ -344,7 +342,7 @@ export default function Home() {
                     <Image
                       src="./Sunlife.png"
                       alt="Sunrise"
-                      className="dark:invert hover:opacity-80 transition-opacity"
+                      className="hover:opacity-80 transition-opacity"
                       width={600}
                       height={600}
                       priority
@@ -393,7 +391,7 @@ export default function Home() {
                     <Image
                       src="./Nissan.png"
                       alt="Nissan"
-                      className="dark:invert hover:opacity-80 transition-opacity"
+                      className="hover:opacity-80 transition-opacity"
                       width={600}
                       height={600}
                       priority
@@ -442,7 +440,7 @@ export default function Home() {
                     <Image
                       src="./Arcadier.png"
                       alt="Arcadier"
-                      className="dark:invert hover:opacity-80 transition-opacity"
+                      className="hover:opacity-80 transition-opacity"
                       width={600}
                       height={600}
                       priority
