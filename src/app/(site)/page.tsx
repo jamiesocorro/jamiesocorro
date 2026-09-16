@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import ImageWithSkeleton from "./components/ImageWithSkeleton";
 
 type Project = {
   name: string;
@@ -230,12 +231,13 @@ export default function Home() {
         <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-10 px-6 text-center">
           <div className="relative">
             <div className="absolute inset-0 -z-10 rounded-full bg-white/30 blur-2xl" />
-            <Image
+            <ImageWithSkeleton
               src="./Avatar.gif"
               alt="Jamie Socorro"
               width={168}
               height={168}
               priority
+              wrapperClassName="rounded-full"
               className="rounded-full shadow-2xl ring-4 ring-white/40"
             />
           </div>
@@ -290,7 +292,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="relative block aspect-[16/10] overflow-hidden bg-black/30"
                 >
-                  <Image
+                  <ImageWithSkeleton
                     src={p.img}
                     alt={p.alt}
                     fill
