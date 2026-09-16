@@ -16,10 +16,6 @@
   }
 }
 
-body {
-  font-family: Calibri, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
