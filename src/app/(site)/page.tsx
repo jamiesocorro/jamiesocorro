@@ -1,22 +1,88 @@
 import Image from "next/image";
-import Link from "next/link";
-import type { ReactNode } from "react";
 import ImageWithSkeleton from "./components/ImageWithSkeleton";
-
-type Project = {
-  name: string;
-  href: string;
-  img: string;
-  alt: string;
-  tagline: string;
-  description: ReactNode;
-  position: string;
-  year?: string;
-  technologies: string;
-  hidden?: boolean;
-};
+import ProjectsSection, { type Project } from "./components/ProjectsSection";
 
 const projects: Project[] = [
+  {
+    name: "One App Sports",
+    href: "https://www.oneappsports.com/",
+    img: "./OneAppSports.png",
+    alt: "One App Sports",
+    tagline: "Pickleball ranking, managing & booking app",
+    description: (
+      <>
+        One App Sports is a pickleball platform that lets competitive players log matches, climb global leaderboards, and connect with players in their area. Venue owners can manage courts and bookings while tracking player statistics through an XP-based ranking system. Visit{" "}
+        <a href="https://www.oneappsports.com/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">
+          oneappsports.com
+        </a>
+        .
+      </>
+    ),
+    position: "CEO and Senior Frontend Developer",
+    year: "2026",
+    technologies: "ReactJS, React Native, Rails",
+    status: "own-app",
+  },
+  {
+    name: "Brandon Chan",
+    href: "https://brandon-chan.vercel.app/",
+    img: "./BrandonChan.png",
+    alt: "Brandon Chan",
+    tagline: "Fashion designer — concept design options",
+    description: (
+      <>
+        A set of three concept homepage designs — Paper, Noir, and Magazine — presented for Brandon Chan, a fashion designer based in Manila, Philippines, each exploring a different visual direction for the client to choose from. Visit{" "}
+        <a href="https://brandon-chan.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">
+          brandon-chan.vercel.app
+        </a>
+        . <span className="italic text-sky-300/80">Currently being pitched to the client for them to pick a direction.</span>
+      </>
+    ),
+    position: "Senior Frontend Developer",
+    year: "2026",
+    technologies: "NextJS, ReactJS, TailwindCSS",
+    status: "samples",
+  },
+  {
+    name: "The Drevan Clinic",
+    href: "https://drevan-clinic.vercel.app/",
+    img: "./DrevanClinic.png",
+    alt: "The Drevan Clinic",
+    tagline: "Aesthetic clinic website",
+    description: (
+      <>
+        The Drevan Clinic is an aesthetic and anti-aging treatment clinic with 3 branches, led by an APTOS-certified, internationally trained doctor. The site covers services, patient results, and consultation booking. Visit{" "}
+        <a href="https://drevan-clinic.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">
+          drevan-clinic.vercel.app
+        </a>
+        . <span className="italic text-amber-300/80">Site is complete — just waiting on the client&apos;s confirmation to deploy.</span>
+      </>
+    ),
+    position: "Senior Frontend Developer",
+    year: "2026",
+    technologies: "NextJS, ReactJS, TailwindCSS",
+    status: "in-progress",
+  },
+  {
+    name: "Vince Catacutan Films",
+    href: "https://vcfilms.vercel.app/",
+    img: "./VinceCatacutanFilms.png",
+    alt: "Vince Catacutan Films",
+    tagline: "Wedding videography portfolio",
+    description: (
+      <>
+        Vince Catacutan Films is a wedding videography studio — &ldquo;honest moments, told beautifully&rdquo; — showcasing featured films, a full film library, and booking inquiries for couples. Visit{" "}
+        <a href="https://vcfilms.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">
+          vcfilms.vercel.app
+        </a>
+        . <span className="italic text-amber-300/80">Site is complete — just waiting on the client&apos;s confirmation to deploy.</span>
+      </>
+    ),
+    position: "Senior Frontend Developer",
+    year: "2026",
+    technologies: "NextJS, ReactJS, TailwindCSS",
+    status: "in-progress",
+  },
   {
     name: "Amco Global Inc.",
     href: "https://amco-global-inc.vercel.app/",
@@ -29,12 +95,14 @@ const projects: Project[] = [
         <a href="https://amco-global-inc.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">
           amco-global-inc.vercel.app
         </a>
-        .
+        . <span className="italic text-amber-300/80">Downpayment paid — still waiting on the client to provide the remaining content and materials to finish the build.</span>
       </>
     ),
     position: "Senior Frontend Developer",
     year: "2026",
     technologies: "NextJS, ReactJS, TailwindCSS",
+    status: "in-progress",
+    badge: "Waiting for Materials",
   },
   {
     name: "PPL — Professional People's Lab",
@@ -54,25 +122,6 @@ const projects: Project[] = [
     position: "Senior Frontend Developer",
     year: "2026",
     technologies: "NextJS, ReactJS, TailwindCSS",
-  },
-  {
-    name: "One App Sports",
-    href: "https://www.oneappsports.com/",
-    img: "./OneAppSports.png",
-    alt: "One App Sports",
-    tagline: "Pickleball ranking, managing & booking app",
-    description: (
-      <>
-        One App Sports is a pickleball platform that lets competitive players log matches, climb global leaderboards, and connect with players in their area. Venue owners can manage courts and bookings while tracking player statistics through an XP-based ranking system. Visit{" "}
-        <a href="https://www.oneappsports.com/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">
-          oneappsports.com
-        </a>
-        .
-      </>
-    ),
-    position: "CEO and Senior Frontend Developer",
-    year: "2026",
-    technologies: "ReactJS, React Native, Rails",
   },
   {
     name: "Lyra Micolob",
@@ -110,6 +159,7 @@ const projects: Project[] = [
     ),
     position: "Frontend Developer",
     technologies: "WordPress, PHP, Elementor",
+    status: "cancelled",
   },
   {
     name: "Projectler",
@@ -266,92 +316,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects */}
-      <section id="projects" className="px-6 py-20">
-        <div className="mx-auto max-w-6xl">
-          <div className="mb-12 text-center">
-            <span className="inline-block rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-emerald-300">
-              Portfolio
-            </span>
-            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-              Selected Work
-            </h2>
-          </div>
-
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {projects.map((p) => (
-              <div
-                key={p.name}
-                className={`group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/40 hover:bg-white/[0.06] ${
-                  p.hidden ? "hidden" : ""
-                }`}
-              >
-                <Link
-                  href={p.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative block aspect-[16/10] overflow-hidden bg-black/30"
-                >
-                  <ImageWithSkeleton
-                    src={p.img}
-                    alt={p.alt}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                </Link>
-
-                <div className="p-5">
-                  <div className="flex items-start justify-between gap-2">
-                    <h3 className="font-bold text-white">{p.name}</h3>
-                    <svg
-                      className="mt-1 h-3.5 w-3.5 shrink-0 text-white/30 transition-colors group-hover:text-emerald-400"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                    >
-                      <path d="M7 17L17 7M7 7h10v10" />
-                    </svg>
-                  </div>
-                  <div className="mt-0.5 text-sm font-medium text-emerald-300/90">{p.tagline}</div>
-                  <p className="mt-3 text-[13px] leading-relaxed text-white/50">
-                    {p.description}
-                  </p>
-
-                  <div className="mt-4 flex flex-wrap gap-1.5">
-                    {p.technologies
-                      .split(",")
-                      .map((t) => t.trim())
-                      .filter(Boolean)
-                      .map((t) => (
-                        <span
-                          key={t}
-                          className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-medium text-white/70"
-                        >
-                          {t}
-                        </span>
-                      ))}
-                  </div>
-
-                  <div className="mt-4 flex items-center gap-2 border-t border-white/10 pt-3 text-[11px] text-white/40">
-                    <span className="font-semibold text-white/70">{p.position}</span>
-                    {p.year && (
-                      <>
-                        <span>·</span>
-                        <span>{p.year}</span>
-                      </>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProjectsSection projects={projects} />
 
       <footer className="border-t border-white/10 px-4 py-8 text-center text-xs text-white/40">
         Copyright {new Date().getFullYear()} Jamie Socorro

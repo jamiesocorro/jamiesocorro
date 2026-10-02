@@ -21,3 +21,28 @@
     text-wrap: balance;
   }
 }
+
+@keyframes shimmer-sweep {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-badge {
+  background-image: linear-gradient(
+    110deg,
+    #450a0a 0%,
+    #7f1d1d 16%,
+    #b45309 32%,
+    #e6c478 45%,
+    #7f1d1d 60%,
+    #450a0a 76%,
+    #7f1d1d 90%,
+    #b45309 100%
+  );
+  background-size: 250% 100%;
+  animation: shimmer-sweep 6s linear infinite;
+}
