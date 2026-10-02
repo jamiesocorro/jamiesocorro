@@ -84,6 +84,25 @@ const projects: Project[] = [
     status: "in-progress",
   },
   {
+    name: "Kapwa Counseling",
+    href: "https://kapwacounselingbc.com/",
+    img: "./KapwaCounseling.png",
+    alt: "Kapwa Counseling",
+    tagline: "Counselling practice website",
+    description: (
+      <>
+        Kapwa Counseling is a trauma-informed, culturally responsive counselling practice based in Prince George, BC, serving adults, couples, youth, and children — grounded in the Filipino value of kapwa (shared self). The site covers services, the team, specialties, fees, and online booking, with direct billing and multilingual support (English, Tagalog, Portuguese). Visit{" "}
+        <a href="https://kapwacounselingbc.com/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">
+          kapwacounselingbc.com
+        </a>
+        .
+      </>
+    ),
+    position: "Senior Frontend Developer",
+    year: "2026",
+    technologies: "NextJS, ReactJS, TailwindCSS",
+  },
+  {
     name: "Amco Global Inc.",
     href: "https://amco-global-inc.vercel.app/",
     img: "./AmcoGlobal.png",
