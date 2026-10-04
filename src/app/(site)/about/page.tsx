@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import SiteNav from "../components/SiteNav";
 import SiteFooter from "../components/SiteFooter";
 import ImageWithSkeleton from "../components/ImageWithSkeleton";
+import { basePath } from "../base-path";
 
 export const metadata: Metadata = {
   title: "About — Jamie Socorro",
@@ -41,7 +42,7 @@ export default function About() {
 
           <div className="mt-10 flex flex-col gap-10 sm:flex-row sm:items-start">
             <ImageWithSkeleton
-              src="/Avatar.gif"
+              src={`${basePath}/Avatar.gif`}
               alt="Jamie Socorro"
               width={160}
               height={160}

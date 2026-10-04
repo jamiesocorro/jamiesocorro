@@ -3,12 +3,13 @@ import ImageWithSkeleton from "./components/ImageWithSkeleton";
 import ProjectsSection, { type Project } from "./components/ProjectsSection";
 import SiteNav from "./components/SiteNav";
 import SiteFooter from "./components/SiteFooter";
+import { basePath } from "./base-path";
 
 const projects: Project[] = [
   {
     name: "One App Sports",
     href: "https://www.oneappsports.com/",
-    img: "./OneAppSports.png",
+    img: `${basePath}/OneAppSports.png`,
     alt: "One App Sports",
     tagline: "Pickleball ranking, managing & booking app",
     description: (
@@ -28,7 +29,7 @@ const projects: Project[] = [
   {
     name: "Brandon Chan",
     href: "https://brandon-chan.vercel.app/",
-    img: "./BrandonChan.png",
+    img: `${basePath}/BrandonChan.png`,
     alt: "Brandon Chan",
     tagline: "Fashion designer — concept design options",
     description: (
@@ -48,7 +49,7 @@ const projects: Project[] = [
   {
     name: "The Drevan Clinic",
     href: "https://drevan-clinic.vercel.app/",
-    img: "./DrevanClinic.png",
+    img: `${basePath}/DrevanClinic.png`,
     alt: "The Drevan Clinic",
     tagline: "Aesthetic clinic website",
     description: (
@@ -68,7 +69,7 @@ const projects: Project[] = [
   {
     name: "Vince Catacutan Films",
     href: "https://vcfilms.vercel.app/",
-    img: "./VinceCatacutanFilms.png",
+    img: `${basePath}/VinceCatacutanFilms.png`,
     alt: "Vince Catacutan Films",
     tagline: "Wedding videography portfolio",
     description: (
@@ -88,7 +89,7 @@ const projects: Project[] = [
   {
     name: "Kapwa Counseling",
     href: "https://kapwacounselingbc.com/",
-    img: "./KapwaCounseling.png",
+    img: `${basePath}/KapwaCounseling.png`,
     alt: "Kapwa Counseling",
     tagline: "Counselling practice website",
     description: (
@@ -107,7 +108,7 @@ const projects: Project[] = [
   {
     name: "Amco Global Inc.",
     href: "https://amco-global-inc.vercel.app/",
-    img: "./AmcoGlobal.png",
+    img: `${basePath}/AmcoGlobal.png`,
     alt: "Amco Global Inc.",
     tagline: "Industrial lifting equipment company website",
     description: (
@@ -128,7 +129,7 @@ const projects: Project[] = [
   {
     name: "PPL — Professional People's Lab",
     href: "https://www.ppl.com.ph/",
-    img: "./PplCompany.png",
+    img: `${basePath}/PplCompany.png`,
     alt: "PPL — Professional People's Lab",
     tagline: "Talent management agency website",
     description: (
@@ -147,7 +148,7 @@ const projects: Project[] = [
   {
     name: "Lyra Micolob",
     href: "http://lyramicolob.space",
-    img: "./Lyra.png",
+    img: `${basePath}/Lyra.png`,
     alt: "Lyra Micolob",
     tagline: "Artist profile website",
     description: (
@@ -166,7 +167,7 @@ const projects: Project[] = [
   {
     name: "DIY EasyFit Shutters",
     href: "https://diyeasyfitshutters.com.au/",
-    img: "./DiyEasyfit.png",
+    img: `${basePath}/DiyEasyfit.png`,
     alt: "DIY EasyFit Shutters",
     tagline: "Plantation shutters e-commerce website",
     description: (
@@ -185,7 +186,7 @@ const projects: Project[] = [
   {
     name: "Projectler",
     href: "https://app.projectler.com/login",
-    img: "./Projectler.png",
+    img: `${basePath}/Projectler.png`,
     alt: "Projectler",
     tagline: "Project management software",
     description: (
@@ -200,7 +201,7 @@ const projects: Project[] = [
   {
     name: "Shiftbase",
     href: "https://app.shiftbase.com",
-    img: "./Shiftbase.png",
+    img: `${basePath}/Shiftbase.png`,
     alt: "Shiftbase",
     tagline: "Employee management software",
     description: (
@@ -215,7 +216,7 @@ const projects: Project[] = [
   {
     name: "Treatanyone",
     href: "https://practice.treatanyone.com/auth/login",
-    img: "./Treatanyone.png",
+    img: `${basePath}/Treatanyone.png`,
     alt: "Treatanyone",
     tagline: "Mental health management software",
     description: (
@@ -230,7 +231,7 @@ const projects: Project[] = [
   {
     name: "Sunrise",
     href: "https://client.sunlife.com.ph/SunRisePortal/#/login",
-    img: "./Sunlife.png",
+    img: `${basePath}/Sunlife.png`,
     alt: "Sunrise",
     tagline: "Investment management software",
     description: (
@@ -245,7 +246,7 @@ const projects: Project[] = [
   {
     name: "Nissan",
     href: "https://keepitfresh.nissanusa.com/",
-    img: "./Nissan.png",
+    img: `${basePath}/Nissan.png`,
     alt: "Nissan",
     tagline: "Advertisment website for nissan car",
     description: (
@@ -260,7 +261,7 @@ const projects: Project[] = [
   {
     name: "Arcadier",
     href: "https://www.arcadier.com/",
-    img: "./Arcadier.png",
+    img: `${basePath}/Arcadier.png`,
     alt: "Arcadier",
     tagline: "Online Marketplace",
     description: (
@@ -316,7 +317,7 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[640px]">
           <div className="relative h-[340px] sm:h-[460px] lg:h-auto">
             <ImageWithSkeleton
-              src="./hero-image.png"
+              src={`${basePath}/hero-image.png`}
               alt="Jamie Socorro"
               fill
               priority

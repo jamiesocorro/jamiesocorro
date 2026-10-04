@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { basePath } from "../base-path";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -13,7 +14,7 @@ export default function SiteNav({ active }: { active?: string }) {
     <header className="fixed inset-x-0 top-5 z-50 flex justify-center px-4">
       <nav className="flex max-w-full items-center gap-0.5 overflow-x-auto rounded-full border border-white/10 bg-black/50 py-2 pl-2 pr-2 shadow-lg backdrop-blur-md sm:gap-1">
         <Link href="/" className="flex shrink-0 items-center gap-2 pr-2">
-          <Image src="/dev-icon.png" alt="Jamie Socorro" width={30} height={30} className="rounded-full" priority />
+          <Image src={`${basePath}/dev-icon.png`} alt="Jamie Socorro" width={30} height={30} className="rounded-full" priority />
           <span className="text-sm font-bold tracking-tight text-white">
             Jamie<span className="text-emerald-400">.</span>
           </span>

@@ -26,10 +26,11 @@ export default function Contact() {
         </div>
 
         <form
-          action="https://formspree.io/f/YOUR_FORM_ID"
+          action="https://formspree.io/jamiesocorro21@gmail.com"
           method="POST"
           className="mx-auto mt-12 flex max-w-xl flex-col gap-5"
         >
+          <input type="hidden" name="_subject" value="New message from jamiesocorro.github.io" />
           <div className="grid gap-5 sm:grid-cols-2">
             <div className="flex flex-col gap-2">
               <label htmlFor="name" className="text-xs font-semibold uppercase tracking-wider text-white/50">
