@@ -106,6 +106,25 @@ const projects: Project[] = [
     technologies: "NextJS, ReactJS, TailwindCSS",
   },
   {
+    name: "Daryl Ong",
+    href: "https://darylong.com/",
+    img: `${basePath}/DarylOng.png`,
+    alt: "Daryl Ong",
+    tagline: "Filipino R&B singer-songwriter artist website",
+    description: (
+      <>
+        Daryl Ong — &ldquo;The RnB Crooner&rdquo; — is a Filipino R&amp;B singer-songwriter known for his hits, available for concerts, corporate events, weddings, and private parties. The site covers his music, live performances, and booking inquiries. Visit{" "}
+        <a href="https://darylong.com/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">
+          darylong.com
+        </a>
+        .
+      </>
+    ),
+    position: "Senior Frontend Developer",
+    year: "2026",
+    technologies: "NextJS, ReactJS, TailwindCSS",
+  },
+  {
     name: "Amco Global Inc.",
     href: "https://amco-global-inc.vercel.app/",
     img: `${basePath}/AmcoGlobal.png`,
