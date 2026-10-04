@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formspree/react": "^3.0.0",
     "@typescript-eslint/project-service": "^8.33.1",
     "@typescript-eslint/tsconfig-utils": "^8.33.1",
     "eslint-visitor-keys": "^4.2.0",

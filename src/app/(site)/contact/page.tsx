@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import SiteNav from "../components/SiteNav";
 import SiteFooter from "../components/SiteFooter";
+import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact — Jamie Socorro",
@@ -25,62 +26,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <form
-          action="https://formspree.io/jamiesocorro21@gmail.com"
-          method="POST"
-          className="mx-auto mt-12 flex max-w-xl flex-col gap-5"
-        >
-          <input type="hidden" name="_subject" value="New message from jamiesocorro.github.io" />
-          <div className="grid gap-5 sm:grid-cols-2">
-            <div className="flex flex-col gap-2">
-              <label htmlFor="name" className="text-xs font-semibold uppercase tracking-wider text-white/50">
-                Name
-              </label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                required
-                className="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition-colors focus:border-emerald-400/50"
-                placeholder="Your name"
-              />
-            </div>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="email" className="text-xs font-semibold uppercase tracking-wider text-white/50">
-                Email
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                className="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition-colors focus:border-emerald-400/50"
-                placeholder="you@example.com"
-              />
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <label htmlFor="message" className="text-xs font-semibold uppercase tracking-wider text-white/50">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              rows={6}
-              className="resize-none rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition-colors focus:border-emerald-400/50"
-              placeholder="Tell me a bit about your project..."
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="mt-2 rounded-full bg-emerald-400 px-6 py-3 text-sm font-semibold text-[#0a0f1c] shadow-lg transition-transform hover:-translate-y-0.5 hover:shadow-xl"
-          >
-            Send Message
-          </button>
-        </form>
+        <ContactForm />
       </section>
 
       <SiteFooter />
