@@ -354,19 +354,28 @@ export default function Home() {
       </section>
 
       {/* Stack */}
-      <section className="border-y border-white/10 bg-white/[0.02] px-6 py-6">
-        <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-x-1.5 gap-y-2 font-mono text-xs leading-relaxed sm:text-sm">
-          <span className="text-sky-400">const</span>
-          <span className="text-white/80">stack</span>
-          <span className="text-white/50">=</span>
-          <span className="text-white/50">[</span>
-          {STACK.map((item, i) => (
-            <span key={item}>
-              <span className="text-emerald-300">&quot;{item}&quot;</span>
-              {i < STACK.length - 1 && <span className="text-white/50">,</span>}
-            </span>
-          ))}
-          <span className="text-white/50">];</span>
+      <section className="bg-[#0a0f1c] px-6 py-16 sm:py-20">
+        <div className="mx-auto max-w-2xl overflow-hidden rounded-2xl border border-white/10 bg-[#0d1424] shadow-2xl shadow-black/40">
+          <div className="flex items-center gap-2 border-b border-white/10 bg-white/[0.03] px-4 py-3">
+            <span className="h-3 w-3 rounded-full bg-red-500/70" />
+            <span className="h-3 w-3 rounded-full bg-amber-400/70" />
+            <span className="h-3 w-3 rounded-full bg-emerald-400/70" />
+            <span className="ml-3 font-mono text-xs text-white/40">stack.ts</span>
+          </div>
+          <div className="px-6 py-6 font-mono text-[13px] leading-relaxed sm:text-sm">
+            <div>
+              <span className="text-sky-400">const</span>{" "}
+              <span className="text-white/80">stack</span>{" "}
+              <span className="text-white/50">= [</span>
+            </div>
+            {STACK.map((item) => (
+              <div key={item} className="pl-6">
+                <span className="text-emerald-300">&quot;{item}&quot;</span>
+                <span className="text-white/50">,</span>
+              </div>
+            ))}
+            <div className="text-white/50">];</div>
+          </div>
         </div>
       </section>
 
