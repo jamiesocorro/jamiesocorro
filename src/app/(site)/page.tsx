@@ -275,14 +275,7 @@ const projects: Project[] = [
   },
 ];
 
-const SERVICES = [
-  "React & Next.js",
-  "Angular & TypeScript",
-  "Pixel-Perfect UI",
-  "API Integration",
-  "Product Ownership",
-  "Legacy Code Fixes",
-];
+const STACK = ["React", "Next.js", "Angular", "TypeScript", "Product Ownership", "API Integration", "Debugging & Fixes"];
 
 const WHAT_I_DO = [
   {
@@ -360,28 +353,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Marquee */}
-      <section className="relative overflow-hidden border-y border-white/10 bg-white/[0.02] py-5">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#0a0f1c] to-transparent sm:w-32" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#0a0f1c] to-transparent sm:w-32" />
-        <div className="flex">
-          {[0, 1].map((i) => (
-            <div
-              key={i}
-              aria-hidden={i === 1}
-              className="flex shrink-0 animate-marquee items-center gap-8 pr-8"
-            >
-              {SERVICES.map((service) => (
-                <span
-                  key={service}
-                  className="flex items-center gap-8 text-sm font-semibold uppercase tracking-wider text-white/50"
-                >
-                  {service}
-                  <span className="text-emerald-400">✦</span>
-                </span>
-              ))}
-            </div>
+      {/* Stack */}
+      <section className="border-y border-white/10 bg-white/[0.02] px-6 py-6">
+        <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-x-1.5 gap-y-2 font-mono text-xs leading-relaxed sm:text-sm">
+          <span className="text-sky-400">const</span>
+          <span className="text-white/80">stack</span>
+          <span className="text-white/50">=</span>
+          <span className="text-white/50">[</span>
+          {STACK.map((item, i) => (
+            <span key={item}>
+              <span className="text-emerald-300">&quot;{item}&quot;</span>
+              {i < STACK.length - 1 && <span className="text-white/50">,</span>}
+            </span>
           ))}
+          <span className="text-white/50">];</span>
         </div>
       </section>
 
