@@ -276,12 +276,12 @@ const projects: Project[] = [
 ];
 
 const SERVICES = [
-  "Website Development",
-  "Business Websites",
-  "Business Software",
-  "Customer Portals",
-  "Custom CRM",
-  "Website Management",
+  "React & Next.js",
+  "Angular & TypeScript",
+  "Pixel-Perfect UI",
+  "API Integration",
+  "Product Ownership",
+  "Legacy Code Fixes",
 ];
 
 const WHAT_I_DO = [
