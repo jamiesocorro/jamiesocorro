@@ -1,6 +1,8 @@
-import Image from "next/image";
+import Link from "next/link";
 import ImageWithSkeleton from "./components/ImageWithSkeleton";
 import ProjectsSection, { type Project } from "./components/ProjectsSection";
+import SiteNav from "./components/SiteNav";
+import SiteFooter from "./components/SiteFooter";
 
 const projects: Project[] = [
   {
@@ -272,22 +274,33 @@ const projects: Project[] = [
   },
 ];
 
+const WHAT_I_DO = [
+  {
+    n: "01",
+    title: "Build From Scratch",
+    body: "Blank repo to production — architecture, UI, API integration, deployment. One App Sports is proof: I built it and still run it end-to-end as CEO and lead developer.",
+  },
+  {
+    n: "02",
+    title: "Debug & Maintain",
+    body: "Just as comfortable in someone else's codebase — tracing hard bugs, untangling legacy code, and keeping existing products stable and performant.",
+  },
+  {
+    n: "03",
+    title: "Team Player",
+    body: "Sprint planning, standups, code review — I communicate clearly, estimate realistically, and adapt to whatever process a team already runs.",
+  },
+  {
+    n: "04",
+    title: "Frontend Development",
+    body: "ReactJS, NextJS, Angular, TypeScript, CSS, and HTML — building dynamic, responsive, and user-friendly interfaces for products large and small.",
+  },
+];
+
 export default function Home() {
   return (
     <div className="bg-[#0a0f1c]">
-      {/* Floating pill nav */}
-      <header className="fixed inset-x-0 top-5 z-50 flex justify-center px-4">
-        <nav className="flex items-center gap-2 rounded-full border border-white/10 bg-black/50 py-2 pl-2 pr-4 shadow-lg backdrop-blur-md">
-          <Image src="./dev-icon.png" alt="Jamie Socorro" width={30} height={30} className="rounded-full" priority />
-          <span className="mr-2 text-sm font-bold tracking-tight text-white">
-            Jamie<span className="text-emerald-400">.</span>
-          </span>
-          <div className="h-4 w-px bg-white/15" />
-          <a href="#projects" className="ml-2 text-xs font-semibold uppercase tracking-wider text-white/70 transition-colors hover:text-white">
-            Projects
-          </a>
-        </nav>
-      </header>
+      <SiteNav active="Home" />
 
       {/* Hero */}
       <section
@@ -312,34 +325,66 @@ export default function Home() {
           </div>
 
           <div>
-            <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200">
-              Manila, Philippines
-            </div>
-            <h1 className="mt-3 text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-6xl">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-emerald-100">
+              Frontend Development • React &amp; Next.js • 15+ Years
+            </span>
+            <h1 className="mt-5 text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-6xl">
               Jamie Socorro
             </h1>
             <p className="mt-3 text-xl font-semibold text-emerald-100 sm:text-2xl">
               Senior Frontend Developer
             </p>
-            <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-white/80 sm:text-base">
-              15+ years of remote work experience building dynamic, responsive, and user-friendly web applications with ReactJS, NextJS, Angular, CSS, and HTML — skilled in productivity, digital collaboration, and adapting to evolving industry trends.
-            </p>
           </div>
 
-          <a
-            href="#projects"
-            className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0a0f1c] shadow-lg transition-transform hover:-translate-y-0.5 hover:shadow-xl"
-          >
-            View My Work
-          </a>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="#projects"
+              className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0a0f1c] shadow-lg transition-transform hover:-translate-y-0.5 hover:shadow-xl"
+            >
+              View My Work
+            </a>
+            <Link
+              href="/contact/"
+              className="rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-white/50 hover:bg-white/10"
+            >
+              Get In Touch
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* What I Do */}
+      <section className="border-b border-white/10 bg-[#0a0f1c] px-6 py-20">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-12 text-center">
+            <span className="text-xs font-semibold uppercase tracking-widest text-emerald-300">
+              What I Do
+            </span>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+              How I can help.
+            </h2>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {WHAT_I_DO.map((item) => (
+              <div
+                key={item.n}
+                className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-colors hover:border-emerald-400/30"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-emerald-400/30 text-sm font-bold text-emerald-300">
+                  {item.n}
+                </div>
+                <h3 className="mt-4 font-bold text-white">{item.title}</h3>
+                <p className="mt-2 text-[13px] leading-relaxed text-white/50">{item.body}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       <ProjectsSection projects={projects} />
 
-      <footer className="border-t border-white/10 px-4 py-8 text-center text-xs text-white/40">
-        Copyright {new Date().getFullYear()} Jamie Socorro
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
