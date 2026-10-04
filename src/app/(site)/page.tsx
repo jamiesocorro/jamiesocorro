@@ -274,6 +274,15 @@ const projects: Project[] = [
   },
 ];
 
+const SERVICES = [
+  "Website Development",
+  "Business Websites",
+  "Business Software",
+  "Customer Portals",
+  "Custom CRM",
+  "Website Management",
+];
+
 const WHAT_I_DO = [
   {
     n: "01",
@@ -299,57 +308,79 @@ const WHAT_I_DO = [
 
 export default function Home() {
   return (
-    <div className="bg-[#0a0f1c]">
+    <div className="overflow-x-hidden bg-[#0a0f1c]">
       <SiteNav active="Home" />
 
       {/* Hero */}
-      <section
-        className="relative overflow-hidden bg-gradient-to-br from-emerald-600 via-teal-700 to-[#0a0f1c] pb-40 pt-32 sm:pt-40"
-        style={{ clipPath: "polygon(0 0, 100% 0, 100% 88%, 0 100%)" }}
-      >
-        <div className="pointer-events-none absolute -top-24 right-0 h-96 w-96 rounded-full bg-emerald-400/30 blur-3xl" />
-        <div className="pointer-events-none absolute bottom-0 left-0 h-80 w-80 rounded-full bg-teal-300/20 blur-3xl" />
-
-        <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-10 px-6 text-center">
-          <div className="relative">
-            <div className="absolute inset-0 -z-10 rounded-full bg-white/30 blur-2xl" />
+      <section className="relative overflow-hidden bg-[#0a0f1c]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[640px]">
+          <div className="relative h-[340px] sm:h-[460px] lg:h-auto">
             <ImageWithSkeleton
-              src="./Avatar.gif"
+              src="./hero-image.png"
               alt="Jamie Socorro"
-              width={168}
-              height={168}
+              fill
               priority
-              wrapperClassName="rounded-full"
-              className="rounded-full shadow-2xl ring-4 ring-white/40"
+              wrapperClassName="h-full w-full"
+              className="object-cover object-[22%_18%]"
             />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0a0f1c] lg:bg-gradient-to-r lg:to-[#0a0f1c]" />
           </div>
 
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-emerald-100">
+          <div className="flex min-w-0 flex-col justify-center px-6 py-16 sm:px-12 sm:py-20 lg:px-16 lg:py-0">
+            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-emerald-300">
               Frontend Development • React &amp; Next.js • 15+ Years
             </span>
-            <h1 className="mt-5 text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-6xl">
-              Jamie Socorro
+            <h1 className="mt-5 text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
+              I turn ideas into interfaces people actually enjoy using.
             </h1>
-            <p className="mt-3 text-xl font-semibold text-emerald-100 sm:text-2xl">
-              Senior Frontend Developer
+            <p className="mt-5 max-w-lg text-base leading-relaxed text-white/60">
+              15+ years of frontend development — from client projects to a product I designed, built, and still run myself.
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <a
+                href="#projects"
+                className="rounded-full bg-emerald-400 px-6 py-3 text-sm font-semibold text-[#0a0f1c] shadow-lg transition-transform hover:-translate-y-0.5 hover:shadow-xl"
+              >
+                See My Work
+              </a>
+              <Link
+                href="/contact/"
+                className="rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-white/50 hover:bg-white/10"
+              >
+                Get In Touch
+              </Link>
+            </div>
+
+            <p className="mt-10 text-sm text-white/40">
+              Every project ships with clean code, clear communication, and no surprises.
             </p>
           </div>
+        </div>
+      </section>
 
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="#projects"
-              className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0a0f1c] shadow-lg transition-transform hover:-translate-y-0.5 hover:shadow-xl"
+      {/* Services Marquee */}
+      <section className="relative overflow-hidden border-y border-white/10 bg-white/[0.02] py-5">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#0a0f1c] to-transparent sm:w-32" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#0a0f1c] to-transparent sm:w-32" />
+        <div className="flex">
+          {[0, 1].map((i) => (
+            <div
+              key={i}
+              aria-hidden={i === 1}
+              className="flex shrink-0 animate-marquee items-center gap-8 pr-8"
             >
-              View My Work
-            </a>
-            <Link
-              href="/contact/"
-              className="rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-white/50 hover:bg-white/10"
-            >
-              Get In Touch
-            </Link>
-          </div>
+              {SERVICES.map((service) => (
+                <span
+                  key={service}
+                  className="flex items-center gap-8 text-sm font-semibold uppercase tracking-wider text-white/50"
+                >
+                  {service}
+                  <span className="text-emerald-400">✦</span>
+                </span>
+              ))}
+            </div>
+          ))}
         </div>
       </section>
 
