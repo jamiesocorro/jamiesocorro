@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import SiteNav from "../components/SiteNav";
 import SiteFooter from "../components/SiteFooter";
 import ImageWithSkeleton from "../components/ImageWithSkeleton";
+import CodeCard from "../components/CodeCard";
 import { basePath } from "../base-path";
 
 export const metadata: Metadata = {
@@ -19,6 +20,8 @@ const SKILLS = [
   "HTML & CSS",
   "Material UI",
 ];
+
+const STACK = ["React", "Next.js", "Angular", "TypeScript", "Product Ownership", "API Integration", "Debugging & Fixes"];
 
 const STATS = [
   { value: "15+", label: "Years Experience" },
@@ -90,6 +93,10 @@ export default function About() {
                 </span>
               ))}
             </div>
+          </div>
+
+          <div className="mt-16">
+            <CodeCard filename="stack.ts" varName="stack" items={STACK} />
           </div>
         </div>
       </section>
