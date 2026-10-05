@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ImageWithSkeleton from "./components/ImageWithSkeleton";
+import HeroVideo from "./components/HeroVideo";
 import ProjectsSection, { type Project } from "./components/ProjectsSection";
 import SiteNav from "./components/SiteNav";
 import SiteFooter from "./components/SiteFooter";
@@ -328,15 +328,7 @@ export default function Home() {
       <section className="relative overflow-hidden bg-[#0a0f1c]">
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[640px]">
           <div className="relative h-[340px] sm:h-[460px] lg:h-auto">
-            <ImageWithSkeleton
-              src={`${basePath}/hero-image.png`}
-              alt="Jamie Socorro"
-              fill
-              priority
-              wrapperClassName="h-full w-full"
-              className="object-cover object-[22%_18%]"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0a0f1c] lg:bg-gradient-to-r lg:to-[#0a0f1c]" />
+            <HeroVideo />
           </div>
 
           <div className="flex min-w-0 flex-col justify-center px-6 py-16 sm:px-12 sm:py-20 lg:px-16 lg:py-0">
