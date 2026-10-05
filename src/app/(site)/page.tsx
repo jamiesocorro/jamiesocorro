@@ -300,22 +300,22 @@ const WHAT_I_DO = [
   {
     n: "01",
     title: "Build From Scratch",
-    body: "I can take a project from nothing to a fully working website or app, from the first line of code to launch day. One App Sports is proof: I built it myself and still run it today.",
+    body: "Have an idea but nothing built yet? I'll take it from a blank page to a fully working website or app, ready to launch. One App Sports is proof: built from scratch and still running today.",
   },
   {
     n: "02",
     title: "Debug & Maintain",
-    body: "I'm just as good at fixing problems in code I didn't write. I can jump into an old or messy project, find what's broken, and get it running smoothly again.",
+    body: "Already have a site or app that's broken, slow, or hard to maintain? I'll dig into your existing code, even a messy one, find what's wrong, and get it running smoothly again.",
   },
   {
     n: "03",
     title: "Team Player",
-    body: "I work well with teams. I join planning meetings, give honest timelines, explain things in plain language, and fit into however your team already works.",
+    body: "Need an extra developer who fits right into your team? I'll join your planning meetings, give you honest timelines, explain things in plain language, and work however your team already does.",
   },
   {
     n: "04",
     title: "Frontend Development",
-    body: "I build the part of a website or app that people actually see and use, making sure it looks good and works smoothly on any device, big project or small.",
+    body: "Want your customers to actually enjoy using your product? I'll build the part they see and interact with, so it looks great and runs smoothly on any device, big project or small.",
   },
 ];
 
