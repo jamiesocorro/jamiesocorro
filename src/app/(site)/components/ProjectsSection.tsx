@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, type ReactNode } from "react";
+import { type ReactNode } from "react";
 import ImageWithSkeleton from "./ImageWithSkeleton";
 
 export type Project = {
@@ -15,39 +15,10 @@ export type Project = {
   year?: string;
   technologies: string;
   hidden?: boolean;
-  status?: "samples" | "in-progress" | "own-app" | "cancelled";
-  /** Overrides the default badge text for this project's status (same color/tab grouping, different label). */
-  badge?: string;
-};
-
-const TABS: { key: "all" | "samples" | "in-progress"; label: string }[] = [
-  { key: "all", label: "All" },
-  { key: "samples", label: "Samples" },
-  { key: "in-progress", label: "In Progress" },
-];
-
-const STATUS_BADGE: Record<string, string> = {
-  samples: "Sample",
-  "in-progress": "Waiting for Deployment",
-  "own-app": "Own App",
-  cancelled: "Cancelled",
-};
-
-const STATUS_STYLE: Record<string, string> = {
-  samples: "border-sky-400/40 bg-sky-400/15 text-sky-300",
-  "in-progress": "border-amber-400/40 bg-amber-400/15 text-amber-300",
-  "own-app": "shimmer-badge border-[#e6c478]/30 text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.7)] shadow-[0_0_10px_rgba(180,83,9,0.35)]",
-  cancelled: "border-red-500/30 bg-red-950/40 text-red-400/90",
 };
 
 export default function ProjectsSection({ projects }: { projects: Project[] }) {
-  const [tab, setTab] = useState<"all" | "samples" | "in-progress">("all");
-
-  const visible = projects.filter((p) => {
-    if (p.hidden) return false;
-    if (tab === "all") return true;
-    return p.status === tab;
-  });
+  const visible = projects.filter((p) => !p.hidden);
 
   return (
     <section id="projects" className="px-6 py-20">
@@ -59,22 +30,6 @@ export default function ProjectsSection({ projects }: { projects: Project[] }) {
           <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
             Selected Work
           </h2>
-        </div>
-
-        <div className="mb-10 flex justify-center gap-2">
-          {TABS.map((t) => (
-            <button
-              key={t.key}
-              onClick={() => setTab(t.key)}
-              className={`rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-colors ${
-                tab === t.key
-                  ? "border-emerald-400 bg-emerald-400/10 text-emerald-300"
-                  : "border-white/10 text-white/50 hover:border-white/30 hover:text-white"
-              }`}
-            >
-              {t.label}
-            </button>
-          ))}
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -98,13 +53,6 @@ export default function ProjectsSection({ projects }: { projects: Project[] }) {
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                {p.status && (
-                  <span
-                    className={`absolute left-3 top-3 z-10 whitespace-nowrap rounded-full border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider backdrop-blur-sm ${STATUS_STYLE[p.status]}`}
-                  >
-                    {p.badge ?? STATUS_BADGE[p.status]}
-                  </span>
-                )}
               </Link>
 
               <div className="p-5">

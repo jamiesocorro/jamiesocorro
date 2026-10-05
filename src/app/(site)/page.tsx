@@ -25,7 +25,6 @@ const projects: Project[] = [
     position: "CEO and Senior Frontend Developer",
     year: "2026",
     technologies: "ReactJS, React Native, Rails",
-    status: "own-app",
   },
   {
     name: "Brandon Chan",
@@ -45,7 +44,6 @@ const projects: Project[] = [
     position: "Senior Frontend Developer",
     year: "2026",
     technologies: "NextJS, ReactJS, TailwindCSS",
-    status: "samples",
   },
   {
     name: "The Drevan Clinic",
@@ -65,7 +63,6 @@ const projects: Project[] = [
     position: "Senior Frontend Developer",
     year: "2026",
     technologies: "NextJS, ReactJS, TailwindCSS",
-    status: "in-progress",
   },
   {
     name: "Vince Catacutan Films",
@@ -85,7 +82,6 @@ const projects: Project[] = [
     position: "Senior Frontend Developer",
     year: "2026",
     technologies: "NextJS, ReactJS, TailwindCSS",
-    status: "in-progress",
   },
   {
     name: "Kapwa Counseling",
@@ -143,8 +139,6 @@ const projects: Project[] = [
     position: "Senior Frontend Developer",
     year: "2026",
     technologies: "NextJS, ReactJS, TailwindCSS",
-    status: "in-progress",
-    badge: "Waiting for Materials",
   },
   {
     name: "PPL (Professional People's Lab)",
@@ -201,7 +195,6 @@ const projects: Project[] = [
     ),
     position: "Frontend Developer",
     technologies: "WordPress, PHP, Elementor",
-    status: "cancelled",
   },
   {
     name: "Projectler",
