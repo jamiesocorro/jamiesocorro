@@ -300,22 +300,22 @@ const WHAT_I_DO = [
   {
     n: "01",
     title: "Build From Scratch",
-    body: "Blank repo to production: architecture, UI, API integration, deployment. One App Sports is proof. I built it and still run it end-to-end as CEO and lead developer.",
+    body: "I can take a project from nothing to a fully working website or app, from the first line of code to launch day. One App Sports is proof: I built it myself and still run it today.",
   },
   {
     n: "02",
     title: "Debug & Maintain",
-    body: "Just as comfortable tracing hard bugs in someone else's codebase, untangling legacy code, and keeping existing products stable and performant.",
+    body: "I'm just as good at fixing problems in code I didn't write. I can jump into an old or messy project, find what's broken, and get it running smoothly again.",
   },
   {
     n: "03",
     title: "Team Player",
-    body: "I show up for sprint planning, standups, and code review, communicate clearly, estimate realistically, and adapt to whatever process a team already runs.",
+    body: "I work well with teams. I join planning meetings, give honest timelines, explain things in plain language, and fit into however your team already works.",
   },
   {
     n: "04",
     title: "Frontend Development",
-    body: "Building dynamic, responsive, user-friendly interfaces with ReactJS, NextJS, Angular, TypeScript, CSS, and HTML, for products large and small.",
+    body: "I build the part of a website or app that people actually see and use, making sure it looks good and works smoothly on any device, big project or small.",
   },
 ];
 
