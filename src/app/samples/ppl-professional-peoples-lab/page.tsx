@@ -25,9 +25,9 @@ const BODY_HTML = `<header id="siteHeader">
   <div class="wall" id="wall"></div>
   <div class="hero-scrim"></div>
   <div class="hero-inner">
-    <span class="eyebrow">Talent Management &amp; Talent Development — 17th Year</span>
+    <span class="eyebrow">Talent Management &amp; Talent Development, 17th Year</span>
     <h1>Talent Starts<span class="accent"> Here.</span></h1>
-    <p class="sub">PPL — Professional People's Lab — is the Talent Management and Talent Development vertical of The Doorbell Collective, evolved from the namesake company of our President &amp; CEO, Perry P. Lansigan.</p>
+    <p class="sub">PPL (Professional People's Lab) is the Talent Management and Talent Development vertical of The Doorbell Collective, evolved from the namesake company of our President &amp; CEO, Perry P. Lansigan.</p>
     <div class="hero-ctas">
       <a href="#roster" class="btn btn-red">Discover Our Roster</a>
       <a href="#contact" class="btn btn-line">Partner With Us</a>
@@ -40,15 +40,15 @@ const BODY_HTML = `<header id="siteHeader">
 <section class="about" id="about">
   <div class="wrap about-grid">
     <div class="portrait has-photo">
-      <div class="cap">Perry P. Lansigan — President &amp; CEO</div>
+      <div class="cap">Perry P. Lansigan, President &amp; CEO</div>
     </div>
     <div class="about-copy">
       <span class="eyebrow">Company Profile</span>
       <h2>PPL is the captain of PPL's ship.</h2>
-      <p>Perry P. Lansigan started his career as a trainee at GMA Network more than thirty years ago — work so commendable the network kept him on. That origin story became the foundation for a company built on one conviction: hard work pays off.</p>
+      <p>Perry P. Lansigan started his career as a trainee at GMA Network more than thirty years ago. His work was so commendable the network kept him on, and that origin story became the foundation for a company built on one conviction: hard work pays off.</p>
       <p>Today PPL represents a curated roster of actors, hosts, musicians, dancers, and public figures, backed by a team of managers, handlers, creatives, finance, and legal professionals who run the business behind the talent.</p>
       <blockquote>
-        "Ako ang utak, ikaw ang puso." <span style="font-style:normal; font-size:14px; color:var(--muted);">— on the partnership between PPL and Creative Director Hazel Abonita Rivera</span>
+        "Ako ang utak, ikaw ang puso." <span style="font-style:normal; font-size:14px; color:var(--muted);">(On the partnership between PPL and Creative Director Hazel Abonita Rivera)</span>
         <cite>Perry P. Lansigan, President &amp; CEO</cite>
       </blockquote>
       <div class="stat-row">
@@ -64,7 +64,7 @@ const BODY_HTML = `<header id="siteHeader">
 <section class="impact">
   <div class="wrap">
     <div class="num">143 Million</div>
-    <div class="label">combined followers across all platforms — Artists &amp; PPL Team</div>
+    <div class="label">combined followers across all platforms (Artists &amp; PPL Team)</div>
   </div>
 </section>
 
@@ -72,7 +72,7 @@ const BODY_HTML = `<header id="siteHeader">
   <div class="wrap">
     <div class="section-head">
       <div><span class="eyebrow">The Roster</span><h2>Our Artists</h2></div>
-      <p>Prime Artists, PPL Artists, and Performers — actors, hosts, singers, dancers, and groups.</p>
+      <p>Prime Artists, PPL Artists, and Performers: actors, hosts, singers, dancers, and groups.</p>
     </div>
     <div class="tabs" id="tabs">
       <button class="tab active" data-filter="all">All</button>
@@ -209,7 +209,7 @@ const BODY_HTML = `<header id="siteHeader">
   <div class="wrap">
     <span class="lead">A Vertical Of The Doorbell Collective</span>
     <div class="subbrand-links">
-      <a href="#top">PPL — Talent</a>
+      <a href="#top">PPL Talent</a>
       <a href="#brands">Brand Partnerships</a>
       <a href="#contact">Press &amp; Bookings</a>
     </div>
@@ -257,7 +257,7 @@ const BODY_HTML = `<header id="siteHeader">
   </div>
 
   <div class="wrap footer-bottom">
-    <span>© 2026 PPL — Professional People's Lab. All rights reserved.</span>
+    <span>© 2026 PPL (Professional People's Lab). All rights reserved.</span>
     <span>A vertical of The Doorbell Collective.</span>
   </div>
 </footer>`;
@@ -323,7 +323,7 @@ const SCRIPT_SRC = `
     });
   });
 
-  // hero wall — five columns, alternating drift direction, doubled for seamless loop
+  // hero wall: five columns, alternating drift direction, doubled for seamless loop
   const wall = document.getElementById('wall');
   const colCount = 5;
   for (let c = 0; c < colCount; c++) {

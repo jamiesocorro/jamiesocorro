@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "PPL — We Manage Talent, Build Careers, Create Impact",
+  title: "PPL: We Manage Talent, Build Careers, Create Impact",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

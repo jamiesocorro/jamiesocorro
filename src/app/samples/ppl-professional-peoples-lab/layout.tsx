@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "PPL — Professional People's Lab",
+  title: "PPL: Professional People's Lab",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

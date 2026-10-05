@@ -295,7 +295,7 @@ export default function Page() {
               <em>A Partner in Your Journey.</em>
             </h2>
             <p>We believe in talent with purpose. Our mission is to inspire, empower, and create impact that lasts a lifetime.</p>
-            <p>Perry P. Lansigan started his career as a trainee at GMA Network more than thirty years ago — work so commendable the network kept him on. Today PPL represents a curated roster of actors, hosts, musicians, dancers, and public figures, backed by a team of managers, handlers, creatives, finance, and legal professionals who run the business behind the talent.</p>
+            <p>Perry P. Lansigan started his career as a trainee at GMA Network more than thirty years ago. His work was so commendable the network kept him on. Today PPL represents a curated roster of actors, hosts, musicians, dancers, and public figures, backed by a team of managers, handlers, creatives, finance, and legal professionals who run the business behind the talent.</p>
             <blockquote className="quote">
               &ldquo;Ako ang utak, ikaw ang puso.&rdquo;
               <cite>Perry P. Lansigan, President &amp; CEO</cite>
@@ -306,7 +306,7 @@ export default function Page() {
             </a>
           </div>
           <div className="set-photo has-photo">
-            <span className="set-photo-cap">Perry P. Lansigan — President &amp; CEO</span>
+            <span className="set-photo-cap">Perry P. Lansigan, President &amp; CEO</span>
           </div>
           <div className="stats-list">
             {STATS.map((s) => (

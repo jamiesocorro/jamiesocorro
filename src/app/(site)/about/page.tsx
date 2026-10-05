@@ -5,7 +5,7 @@ import ImageWithSkeleton from "../components/ImageWithSkeleton";
 import { basePath } from "../base-path";
 
 export const metadata: Metadata = {
-  title: "About — Jamie Socorro",
+  title: "About | Jamie Socorro",
   description: "Senior Frontend Developer based in Manila, Philippines, with 15+ years of remote work experience.",
 };
 
@@ -56,7 +56,7 @@ export default function About() {
                 A Web Developer based in Manila, Philippines, with 15+ years of remote work experience. Skilled in productivity, digital collaboration, and adapting to evolving industry trends.
               </p>
               <p className="mt-4 text-base leading-relaxed text-white/70">
-                Experienced front-end developer proficient in ReactJS, NextJS, Angular, CSS, and HTML, with a strong focus on building dynamic, responsive, and user-friendly web applications — from client sites to a product I own and run myself.
+                Experienced front-end developer proficient in ReactJS, NextJS, Angular, CSS, and HTML, with a strong focus on building dynamic, responsive, and user-friendly web applications, from client sites to a product I own and run myself.
               </p>
               <p className="mt-6 text-lg font-semibold text-emerald-100">
                 No confusing process. No unnecessary complexity. Just working software.

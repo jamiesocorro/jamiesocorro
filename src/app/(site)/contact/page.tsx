@@ -4,7 +4,7 @@ import SiteFooter from "../components/SiteFooter";
 import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact — Jamie Socorro",
+  title: "Contact | Jamie Socorro",
   description: "Get in touch with Jamie Socorro, Senior Frontend Developer.",
 };
 

@@ -31,10 +31,10 @@ const projects: Project[] = [
     href: "https://brandon-chan.vercel.app/",
     img: `${basePath}/BrandonChan.png`,
     alt: "Brandon Chan",
-    tagline: "Fashion designer — concept design options",
+    tagline: "Fashion designer, concept design options",
     description: (
       <>
-        A set of three concept homepage designs — Paper, Noir, and Magazine — presented for Brandon Chan, a fashion designer based in Manila, Philippines, each exploring a different visual direction for the client to choose from. Visit{" "}
+        Three concept homepage designs (Paper, Noir, and Magazine) presented for Brandon Chan, a fashion designer based in Manila, Philippines, each exploring a different visual direction for the client to choose from. Visit{" "}
         <a href="https://brandon-chan.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">
           brandon-chan.vercel.app
         </a>
@@ -58,7 +58,7 @@ const projects: Project[] = [
         <a href="https://drevan-clinic.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">
           drevan-clinic.vercel.app
         </a>
-        . <span className="italic text-amber-300/80">Site is complete — just waiting on the client&apos;s confirmation to deploy.</span>
+        . <span className="italic text-amber-300/80">Site is complete, just waiting on the client&apos;s confirmation to deploy.</span>
       </>
     ),
     position: "Senior Frontend Developer",
@@ -74,11 +74,11 @@ const projects: Project[] = [
     tagline: "Wedding videography portfolio",
     description: (
       <>
-        Vince Catacutan Films is a wedding videography studio — &ldquo;honest moments, told beautifully&rdquo; — showcasing featured films, a full film library, and booking inquiries for couples. Visit{" "}
+        Vince Catacutan Films is a wedding videography studio (&ldquo;honest moments, told beautifully&rdquo;) showcasing featured films, a full film library, and booking inquiries for couples. Visit{" "}
         <a href="https://vcfilms.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">
           vcfilms.vercel.app
         </a>
-        . <span className="italic text-amber-300/80">Site is complete — just waiting on the client&apos;s confirmation to deploy.</span>
+        . <span className="italic text-amber-300/80">Site is complete, just waiting on the client&apos;s confirmation to deploy.</span>
       </>
     ),
     position: "Senior Frontend Developer",
@@ -94,7 +94,7 @@ const projects: Project[] = [
     tagline: "Counselling practice website",
     description: (
       <>
-        Kapwa Counseling is a trauma-informed, culturally responsive counselling practice based in Prince George, BC, serving adults, couples, youth, and children — grounded in the Filipino value of kapwa (shared self). The site covers services, the team, specialties, fees, and online booking, with direct billing and multilingual support (English, Tagalog, Portuguese). Visit{" "}
+        Kapwa Counseling is a trauma-informed, culturally responsive counselling practice based in Prince George, BC, serving adults, couples, youth, and children, grounded in the Filipino value of kapwa (shared self). The site covers services, the team, specialties, fees, and online booking, with direct billing and multilingual support (English, Tagalog, Portuguese). Visit{" "}
         <a href="https://kapwacounselingbc.com/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">
           kapwacounselingbc.com
         </a>
@@ -113,7 +113,7 @@ const projects: Project[] = [
     tagline: "Filipino R&B singer-songwriter artist website",
     description: (
       <>
-        Daryl Ong — &ldquo;The RnB Crooner&rdquo; — is a Filipino R&amp;B singer-songwriter known for his hits, available for concerts, corporate events, weddings, and private parties. The site covers his music, live performances, and booking inquiries. Visit{" "}
+        Daryl Ong, known as &ldquo;The RnB Crooner,&rdquo; is a Filipino R&amp;B singer-songwriter known for his hits, available for concerts, corporate events, weddings, and private parties. The site covers his music, live performances, and booking inquiries. Visit{" "}
         <a href="https://darylong.com/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">
           darylong.com
         </a>
@@ -136,7 +136,7 @@ const projects: Project[] = [
         <a href="https://amco-global-inc.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">
           amco-global-inc.vercel.app
         </a>
-        . <span className="italic text-amber-300/80">Downpayment paid — still waiting on the client to provide the remaining content and materials to finish the build.</span>
+        . <span className="italic text-amber-300/80">Downpayment paid, still waiting on the client to provide the remaining content and materials to finish the build.</span>
       </>
     ),
     position: "Senior Frontend Developer",
@@ -146,14 +146,14 @@ const projects: Project[] = [
     badge: "Waiting for Materials",
   },
   {
-    name: "PPL — Professional People's Lab",
+    name: "PPL (Professional People's Lab)",
     href: "https://www.ppl.com.ph/",
     img: `${basePath}/PplCompany.png`,
-    alt: "PPL — Professional People's Lab",
+    alt: "PPL (Professional People's Lab)",
     tagline: "Talent management agency website",
     description: (
       <>
-        PPL — Professional People&apos;s Lab is a Manila-based talent management and development agency representing actors, hosts, and performers, with sections for their artist roster, development programs, activations, and brand partners. Visit{" "}
+        PPL (Professional People&apos;s Lab) is a Manila-based talent management and development agency representing actors, hosts, and performers, with sections for their artist roster, development programs, activations, and brand partners. Visit{" "}
         <a href="https://www.ppl.com.ph/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">
           ppl.com.ph
         </a>
@@ -300,22 +300,22 @@ const WHAT_I_DO = [
   {
     n: "01",
     title: "Build From Scratch",
-    body: "Blank repo to production — architecture, UI, API integration, deployment. One App Sports is proof: I built it and still run it end-to-end as CEO and lead developer.",
+    body: "Blank repo to production: architecture, UI, API integration, deployment. One App Sports is proof. I built it and still run it end-to-end as CEO and lead developer.",
   },
   {
     n: "02",
     title: "Debug & Maintain",
-    body: "Just as comfortable in someone else's codebase — tracing hard bugs, untangling legacy code, and keeping existing products stable and performant.",
+    body: "Just as comfortable tracing hard bugs in someone else's codebase, untangling legacy code, and keeping existing products stable and performant.",
   },
   {
     n: "03",
     title: "Team Player",
-    body: "Sprint planning, standups, code review — I communicate clearly, estimate realistically, and adapt to whatever process a team already runs.",
+    body: "I show up for sprint planning, standups, and code review, communicate clearly, estimate realistically, and adapt to whatever process a team already runs.",
   },
   {
     n: "04",
     title: "Frontend Development",
-    body: "ReactJS, NextJS, Angular, TypeScript, CSS, and HTML — building dynamic, responsive, and user-friendly interfaces for products large and small.",
+    body: "Building dynamic, responsive, user-friendly interfaces with ReactJS, NextJS, Angular, TypeScript, CSS, and HTML, for products large and small.",
   },
 ];
 
@@ -339,7 +339,7 @@ export default function Home() {
               I turn ideas into interfaces people actually enjoy using.
             </h1>
             <p className="mt-5 max-w-lg text-base leading-relaxed text-white/60">
-              15+ years of frontend development — from client projects to a product I designed, built, and still run myself.
+              15+ years of frontend development, from client projects to a product I designed, built, and still run myself.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">

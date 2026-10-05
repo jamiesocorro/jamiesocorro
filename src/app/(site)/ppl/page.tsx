@@ -3,21 +3,21 @@ import Link from "next/link";
 const samples = [
   {
     number: "01",
-    name: "PPL — Professional People's Lab",
+    name: "PPL: Professional People's Lab",
     description:
       "A talent management agency concept site with an animated hero wall, filterable artist roster, and a scrolling brand marquee.",
     href: "/samples/ppl-professional-peoples-lab/",
   },
   {
     number: "02",
-    name: "PPL — We Manage Talent, Build Careers, Create Impact",
+    name: "PPL: We Manage Talent, Build Careers, Create Impact",
     description:
       "A bright, editorial artist-agency homepage with a bold headline hero, dark 'About PPL' pillars, a 5-icon services grid, and a scrollable artist carousel.",
     href: "/samples/ppl-artist-showcase/",
   },
   {
     number: "03",
-    name: "PPL — We Represent Extraordinary.",
+    name: "PPL: We Represent Extraordinary.",
     description:
       "A luxury black-and-gold entertainment agency homepage with an elegant serif headline, moody spotlit hero, a monochrome talent carousel, and a press-mentions strip.",
     href: "/samples/ppl-luxury-agency/",

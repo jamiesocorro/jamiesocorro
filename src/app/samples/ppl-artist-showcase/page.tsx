@@ -78,7 +78,7 @@ const BODY_HTML = `<header id="siteHeader">
 <section class="profile" id="profile">
   <div class="wrap profile-grid">
     <div class="profile-portrait has-photo">
-      <span class="cap">Perry P. Lansigan — President &amp; CEO</span>
+      <span class="cap">Perry P. Lansigan, President &amp; CEO</span>
     </div>
     <div class="profile-copy">
       <div class="sec-head" style="margin-bottom:18px;">
@@ -87,11 +87,11 @@ const BODY_HTML = `<header id="siteHeader">
           Company Profile
         </span>
       </div>
-      <p>Perry P. Lansigan started his career as a trainee at GMA Network more than thirty years ago — work so commendable the network kept him on. That origin story became the foundation for a company built on one conviction: hard work pays off.</p>
+      <p>Perry P. Lansigan started his career as a trainee at GMA Network more than thirty years ago. His work was so commendable the network kept him on, and that origin story became the foundation for a company built on one conviction: hard work pays off.</p>
       <p>Today PPL represents a curated roster of actors, hosts, musicians, dancers, and public figures, backed by a team of managers, handlers, creatives, finance, and legal professionals who run the business behind the talent.</p>
       <blockquote>
         "Ako ang utak, ikaw ang puso."
-        <cite>Perry P. Lansigan, President &amp; CEO — on the partnership with Creative Director Hazel Abonita Rivera</cite>
+        <cite>Perry P. Lansigan, President &amp; CEO (on the partnership with Creative Director Hazel Abonita Rivera)</cite>
       </blockquote>
       <div class="profile-stats">
         <div><h3>17</h3><span>Years as PPL</span></div>

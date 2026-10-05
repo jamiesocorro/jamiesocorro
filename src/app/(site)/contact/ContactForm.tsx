@@ -15,7 +15,7 @@ export default function ContactForm() {
       <div className="mx-auto mt-12 max-w-xl rounded-2xl border border-emerald-400/20 bg-emerald-400/5 px-6 py-10 text-center">
         <h2 className="text-xl font-bold text-white">Message sent.</h2>
         <p className="mt-2 text-sm text-white/60">
-          Thanks for reaching out — I&apos;ll get back to you soon.
+          Thanks for reaching out. I&apos;ll get back to you soon.
         </p>
       </div>
     );
