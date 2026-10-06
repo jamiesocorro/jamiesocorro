@@ -288,6 +288,14 @@ const projects: Project[] = [
   },
 ];
 
+const GLASS_TILES = [
+  "h-8 w-8 bg-white/[0.08]",
+  "h-12 w-12 bg-white/[0.12]",
+  "h-6 w-10 bg-white/[0.06]",
+  "h-10 w-6 bg-white/[0.1]",
+  "h-14 w-14 bg-white/[0.07]",
+];
+
 const SKILLS = [
   "Fast, modern websites",
   "Reliable code that just works",
@@ -342,6 +350,15 @@ export default function Home() {
               className="object-cover object-[38%_10%]"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0a0f1c] lg:bg-gradient-to-r lg:to-[#0a0f1c]" />
+
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex h-20 items-end justify-end gap-3 px-5 pb-5 lg:inset-x-auto lg:inset-y-0 lg:right-0 lg:h-auto lg:w-20 lg:flex-col lg:items-end lg:justify-end lg:px-0 lg:py-5 lg:pr-5">
+              {GLASS_TILES.map((tile, i) => (
+                <span
+                  key={i}
+                  className={`rounded-lg border border-white/20 shadow-lg backdrop-blur-md ${tile}`}
+                />
+              ))}
+            </div>
           </div>
 
           <div className="flex min-w-0 flex-col justify-center px-6 py-16 sm:px-12 sm:py-20 lg:px-16 lg:py-0">
