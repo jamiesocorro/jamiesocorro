@@ -330,6 +330,11 @@ const WHAT_I_DO = [
     title: "Booking & Reservation Systems",
     body: "Need customers to book courts, slots, or appointments online? I've built this before, One App Sports handles real-time court bookings for pickleball venues, and I can build the same kind of system for your business.",
   },
+  {
+    n: "06",
+    title: "HR & Admin Systems",
+    body: "Need a system to manage staff, schedules, or records? I've worked on this before: Shiftbase for employee scheduling and Treatanyone for patient and practice management, and I can build the same kind of internal tool for your team.",
+  },
 ];
 
 export default function Home() {
@@ -355,8 +360,14 @@ export default function Home() {
               {GLASS_TILES.map((tile, i) => (
                 <span
                   key={i}
-                  className={`rounded-lg border border-white/20 shadow-lg backdrop-blur-md ${tile}`}
-                />
+                  className={`relative overflow-hidden rounded-2xl border border-white/25 shadow-xl shadow-black/40 backdrop-blur-xl ${tile}`}
+                  style={{
+                    background: "linear-gradient(135deg, rgba(255,255,255,0.22), rgba(255,255,255,0.02) 60%)",
+                    boxShadow: "inset 0 1px 1px rgba(255,255,255,0.4), inset 0 -6px 10px -6px rgba(0,0,0,0.3)",
+                  }}
+                >
+                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/35 via-transparent to-transparent" />
+                </span>
               ))}
             </div>
           </div>
