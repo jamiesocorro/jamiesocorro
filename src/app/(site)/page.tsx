@@ -304,13 +304,13 @@ const WHAT_I_DO = [
   },
   {
     n: "02",
-    title: "Debug & Maintain",
-    body: "Already have a site or app that's broken, slow, or hard to maintain? I'll dig into your existing code, even a messy one, find what's wrong, and get it running smoothly again.",
+    title: "Booking & Reservation Systems",
+    body: "Need customers to book courts, slots, or appointments online? I've built this before, One App Sports handles real-time court bookings for pickleball venues, and I can build the same kind of system for your business.",
   },
   {
     n: "03",
-    title: "Team Player",
-    body: "Need an extra developer who fits right into your team? I'll join your planning meetings, give you honest timelines, explain things in plain language, and work however your team already does.",
+    title: "HR & Admin Systems",
+    body: "Need a system to manage staff, schedules, or records? I've worked on this before: Shiftbase for employee scheduling and Treatanyone for patient and practice management, and I can build the same kind of internal tool for your team.",
   },
   {
     n: "04",
@@ -319,13 +319,13 @@ const WHAT_I_DO = [
   },
   {
     n: "05",
-    title: "Booking & Reservation Systems",
-    body: "Need customers to book courts, slots, or appointments online? I've built this before, One App Sports handles real-time court bookings for pickleball venues, and I can build the same kind of system for your business.",
+    title: "Debug & Maintain",
+    body: "Already have a site or app that's broken, slow, or hard to maintain? I'll dig into your existing code, even a messy one, find what's wrong, and get it running smoothly again.",
   },
   {
     n: "06",
-    title: "HR & Admin Systems",
-    body: "Need a system to manage staff, schedules, or records? I've worked on this before: Shiftbase for employee scheduling and Treatanyone for patient and practice management, and I can build the same kind of internal tool for your team.",
+    title: "Team Player",
+    body: "Need an extra developer who fits right into your team? I'll join your planning meetings, give you honest timelines, explain things in plain language, and work however your team already does.",
   },
 ];
 
@@ -347,9 +347,6 @@ export default function Home() {
               className="object-cover object-[38%_10%]"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0a0f1c] lg:bg-gradient-to-r lg:to-[#0a0f1c]" />
-            <div
-              className="pointer-events-none absolute bottom-0 right-0 z-10 h-0 w-0 border-b-[56px] border-l-[56px] border-b-emerald-400 border-l-transparent drop-shadow-[0_-2px_12px_rgba(16,185,129,0.45)]"
-            />
           </div>
 
           <div className="flex min-w-0 flex-col justify-center px-6 py-16 sm:px-12 sm:py-20 lg:px-16 lg:py-0">
