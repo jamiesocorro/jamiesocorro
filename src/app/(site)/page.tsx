@@ -1,5 +1,5 @@
 import Link from "next/link";
-import HeroVideo from "./components/HeroVideo";
+import ImageWithSkeleton from "./components/ImageWithSkeleton";
 import CodeCard from "./components/CodeCard";
 import ProjectsSection, { type Project } from "./components/ProjectsSection";
 import SiteNav from "./components/SiteNav";
@@ -300,7 +300,7 @@ const WHAT_I_DO = [
   {
     n: "01",
     title: "Build From Scratch",
-    body: "Have an idea but nothing built yet? I'll take it from a blank page to a fully working website or app, ready to launch. One App Sports is proof: built from scratch and still running today.",
+    body: "Have an idea but nothing built yet? I'll take it from a blank page to a fully working website or app, ready to launch, hosting, domain, database, and registration systems included. One App Sports is proof: built from scratch and still running today.",
   },
   {
     n: "02",
@@ -317,6 +317,11 @@ const WHAT_I_DO = [
     title: "Frontend Development",
     body: "Want your customers to actually enjoy using your product? I'll build the part they see and interact with, so it looks great and runs smoothly on any device, big project or small.",
   },
+  {
+    n: "05",
+    title: "Booking & Reservation Systems",
+    body: "Need customers to book courts, slots, or appointments online? I've built this before, One App Sports handles real-time court bookings for pickleball venues, and I can build the same kind of system for your business.",
+  },
 ];
 
 export default function Home() {
@@ -328,7 +333,15 @@ export default function Home() {
       <section className="relative overflow-hidden bg-[#0a0f1c]">
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[640px]">
           <div className="relative h-[340px] sm:h-[460px] lg:h-auto">
-            <HeroVideo />
+            <ImageWithSkeleton
+              src={`${basePath}/pictorial-jamie.png`}
+              alt="Jamie Socorro"
+              fill
+              priority
+              wrapperClassName="h-full w-full"
+              className="object-cover object-[38%_10%]"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0a0f1c] lg:bg-gradient-to-r lg:to-[#0a0f1c]" />
           </div>
 
           <div className="flex min-w-0 flex-col justify-center px-6 py-16 sm:px-12 sm:py-20 lg:px-16 lg:py-0">
@@ -390,9 +403,12 @@ export default function Home() {
             <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               How I can help.
             </h2>
+            <p className="mx-auto mt-4 max-w-xl text-sm text-white/50 sm:text-base">
+              Need a simple static website? Need a court booking system? Need an HR or admin system? Need something built from the ground up?
+            </p>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {WHAT_I_DO.map((item) => (
               <div
                 key={item.n}
