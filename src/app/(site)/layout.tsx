@@ -6,6 +6,9 @@ import { basePath } from "./base-path";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 const siteUrl = "https://jamiesocorro.dev";
+// Cache-bust the OG image URL so Facebook/Messenger can't reuse a stale cached
+// entry from before this image existed; bump this if the image changes again.
+const ogImageUrl = `${siteUrl}/og-image.png?v=2`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -47,8 +50,8 @@ export const metadata: Metadata = {
     siteName: "Jamie Socorro",
     images: [
       {
-        url: `${siteUrl}/og-image.png`,
-        secureUrl: `${siteUrl}/og-image.png`,
+        url: ogImageUrl,
+        secureUrl: ogImageUrl,
         width: 1200,
         height: 630,
         type: "image/png",
@@ -62,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Jamie Socorro — Senior Frontend Developer",
     description: "Websites, booking systems, and web apps, built from scratch or fixed up.",
-    images: [`${siteUrl}/og-image.png`],
+    images: [ogImageUrl],
   },
 };
 
