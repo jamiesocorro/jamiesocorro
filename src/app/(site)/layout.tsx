@@ -5,11 +5,15 @@ import { basePath } from "./base-path";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
-const siteUrl = `https://jamiesocorro.github.io${basePath}`;
+const siteUrl = "https://jamiesocorro.dev";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Jamie Socorro",
   description: "Jamie Socorro Portfolio",
+  alternates: {
+    canonical: siteUrl,
+  },
   keywords: [
     "Jamie Socorro",
     "Frontend Developer",
