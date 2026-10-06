@@ -6,7 +6,7 @@ import { basePath } from "./base-path";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 const siteUrl = "https://jamiesocorro.dev";
-const ogImageUrl = `${siteUrl}/og-image.png`;
+const ogImageUrl = `${siteUrl}/og-image.jpg`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
