@@ -288,14 +288,6 @@ const projects: Project[] = [
   },
 ];
 
-const GLASS_TILES = [
-  "h-8 w-8 bg-white/[0.08]",
-  "h-12 w-12 bg-white/[0.12]",
-  "h-6 w-10 bg-white/[0.06]",
-  "h-10 w-6 bg-white/[0.1]",
-  "h-14 w-14 bg-white/[0.07]",
-];
-
 const SKILLS = [
   "Fast, modern websites",
   "Reliable code that just works",
@@ -355,21 +347,9 @@ export default function Home() {
               className="object-cover object-[38%_10%]"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0a0f1c] lg:bg-gradient-to-r lg:to-[#0a0f1c]" />
-
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex h-20 items-end justify-end gap-3 px-5 pb-5 lg:inset-x-auto lg:inset-y-0 lg:right-0 lg:h-auto lg:w-20 lg:flex-col lg:items-end lg:justify-end lg:px-0 lg:py-5 lg:pr-5">
-              {GLASS_TILES.map((tile, i) => (
-                <span
-                  key={i}
-                  className={`relative overflow-hidden rounded-2xl border border-white/25 shadow-xl shadow-black/40 backdrop-blur-xl ${tile}`}
-                  style={{
-                    background: "linear-gradient(135deg, rgba(255,255,255,0.22), rgba(255,255,255,0.02) 60%)",
-                    boxShadow: "inset 0 1px 1px rgba(255,255,255,0.4), inset 0 -6px 10px -6px rgba(0,0,0,0.3)",
-                  }}
-                >
-                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/35 via-transparent to-transparent" />
-                </span>
-              ))}
-            </div>
+            <div
+              className="pointer-events-none absolute bottom-0 right-0 z-10 h-0 w-0 border-b-[56px] border-l-[56px] border-b-emerald-400 border-l-transparent drop-shadow-[0_-2px_12px_rgba(16,185,129,0.45)]"
+            />
           </div>
 
           <div className="flex min-w-0 flex-col justify-center px-6 py-16 sm:px-12 sm:py-20 lg:px-16 lg:py-0">
