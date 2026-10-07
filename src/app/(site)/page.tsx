@@ -123,15 +123,15 @@ const projects: Project[] = [
   },
   {
     name: "Amco Global Inc.",
-    href: "https://amco-global-inc.vercel.app/",
+    href: "https://amcoglobalinc.com/",
     img: `${basePath}/AmcoGlobal.png`,
     alt: "Amco Global Inc.",
     tagline: "Industrial lifting equipment company website",
     description: (
       <>
         Amco Global Inc. designs, installs, and maintains heavy-duty cranes and elevators for industrial applications, backed by over 20 years of experience and 850+ installations across 30+ industries. Visit{" "}
-        <a href="https://amco-global-inc.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">
-          amco-global-inc.vercel.app
+        <a href="https://amcoglobalinc.com/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">
+          amcoglobalinc.com
         </a>
         . <span className="italic text-amber-300/80">Downpayment paid, still waiting on the client to provide the remaining content and materials to finish the build.</span>
       </>
