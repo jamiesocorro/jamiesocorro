@@ -133,7 +133,7 @@ const projects: Project[] = [
         <a href="https://amcoglobalinc.com/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">
           amcoglobalinc.com
         </a>
-        . <span className="italic text-amber-300/80">Downpayment paid, still waiting on the client to provide the remaining content and materials to finish the build.</span>
+        .
       </>
     ),
     position: "Senior Frontend Developer",

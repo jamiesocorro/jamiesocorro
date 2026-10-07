@@ -25,10 +25,10 @@ export default function ProjectsSection({ projects }: { projects: Project[] }) {
       <div className="mx-auto max-w-6xl">
         <div className="mb-8 text-center">
           <span className="inline-block rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-emerald-300">
-            Portfolio
+            The Work
           </span>
           <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-            Selected Work
+            Stuff I&apos;ve shipped.
           </h2>
         </div>
 
