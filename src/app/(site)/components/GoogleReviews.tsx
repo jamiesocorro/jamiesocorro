@@ -1,9 +1,7 @@
+import LeaveReviewButton from "./LeaveReviewButton";
+
 const API_KEY = process.env.GOOGLE_PLACES_API_KEY;
 const PLACE_ID = process.env.GOOGLE_PLACE_ID;
-
-const reviewUrl = PLACE_ID
-  ? `https://search.google.com/local/writereview?placeid=${PLACE_ID}`
-  : "https://www.google.com/search?q=jamie+socorro";
 
 type GoogleReview = {
   authorAttribution?: { displayName: string; photoUri?: string };
@@ -82,14 +80,7 @@ export default async function GoogleReviews() {
             </div>
           )}
 
-          <a
-            href={reviewUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 inline-flex items-center gap-2 rounded-full bg-emerald-400 px-6 py-3 text-sm font-semibold text-[#0a0f1c] shadow-lg transition-transform hover:-translate-y-0.5 hover:shadow-xl"
-          >
-            Leave a Google Review
-          </a>
+          <LeaveReviewButton />
         </div>
 
         {!configured && (
