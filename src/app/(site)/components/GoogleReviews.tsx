@@ -1,52 +1,38 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
-
-const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
-const PLACE_ID = process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID;
+const API_KEY = process.env.GOOGLE_PLACES_API_KEY;
+const PLACE_ID = process.env.GOOGLE_PLACE_ID;
 
 const reviewUrl = PLACE_ID
   ? `https://search.google.com/local/writereview?placeid=${PLACE_ID}`
   : "https://www.google.com/search?q=jamie+socorro";
 
-type Review = {
-  author_name: string;
-  author_url?: string;
-  profile_photo_url?: string;
+type GoogleReview = {
+  authorAttribution?: { displayName: string; photoUri?: string };
   rating: number;
-  relative_time_description: string;
-  text: string;
+  relativePublishTimeDescription: string;
+  text?: { text: string };
 };
 
-// Minimal structural typing for the bits of the Maps JS SDK we use, so this
-// component doesn't need the @types/google.maps package as a dependency.
-type PlaceResult = {
-  reviews?: Review[];
+type PlaceDetails = {
   rating?: number;
-  user_ratings_total?: number;
-};
-type GoogleMapsNamespace = {
-  maps: {
-    Map: new (el: HTMLElement, opts: { center: { lat: number; lng: number }; zoom: number }) => unknown;
-    places: {
-      PlacesService: new (map: unknown) => {
-        getDetails: (
-          request: { placeId: string; fields: string[] },
-          callback: (result: PlaceResult | null, status: string) => void
-        ) => void;
-      };
-      PlacesServiceStatus: { OK: string };
-    };
-  };
+  userRatingCount?: number;
+  reviews?: GoogleReview[];
 };
 
-declare global {
-  interface Window {
-    google?: GoogleMapsNamespace;
+async function fetchPlaceDetails(): Promise<PlaceDetails | null> {
+  if (!API_KEY || !PLACE_ID) return null;
+  try {
+    const res = await fetch(`https://places.googleapis.com/v1/places/${PLACE_ID}`, {
+      headers: {
+        "X-Goog-Api-Key": API_KEY,
+        "X-Goog-FieldMask": "rating,userRatingCount,reviews",
+      },
+    });
+    if (!res.ok) return null;
+    return (await res.json()) as PlaceDetails;
+  } catch {
+    return null;
   }
 }
-
-type Status = "loading" | "ready" | "unconfigured" | "error";
 
 function Stars({ rating }: { rating: number }) {
   return (
@@ -68,62 +54,12 @@ function Stars({ rating }: { rating: number }) {
   );
 }
 
-export default function GoogleReviews() {
-  const [status, setStatus] = useState<Status>("loading");
-  const [reviews, setReviews] = useState<Review[]>([]);
-  const [rating, setRating] = useState<number | null>(null);
-  const [total, setTotal] = useState<number | null>(null);
-  const mapNodeRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!API_KEY || !PLACE_ID) {
-      setStatus("unconfigured");
-      return;
-    }
-
-    function fetchPlace() {
-      if (!window.google || !mapNodeRef.current) {
-        setStatus("error");
-        return;
-      }
-      const googleMaps = window.google;
-      const map = new googleMaps.maps.Map(mapNodeRef.current, { center: { lat: 0, lng: 0 }, zoom: 1 });
-      const service = new googleMaps.maps.places.PlacesService(map);
-      service.getDetails(
-        { placeId: PLACE_ID as string, fields: ["reviews", "rating", "user_ratings_total"] },
-        (place, requestStatus) => {
-          if (requestStatus === googleMaps.maps.places.PlacesServiceStatus.OK && place) {
-            setReviews((place.reviews as unknown as Review[]) ?? []);
-            setRating(place.rating ?? null);
-            setTotal(place.user_ratings_total ?? null);
-            setStatus("ready");
-          } else {
-            setStatus("error");
-          }
-        }
-      );
-    }
-
-    if (window.google?.maps?.places) {
-      fetchPlace();
-      return;
-    }
-
-    const existing = document.getElementById("google-maps-script") as HTMLScriptElement | null;
-    if (existing) {
-      existing.addEventListener("load", fetchPlace);
-      existing.addEventListener("error", () => setStatus("error"));
-      return;
-    }
-
-    const script = document.createElement("script");
-    script.id = "google-maps-script";
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&libraries=places`;
-    script.async = true;
-    script.onload = fetchPlace;
-    script.onerror = () => setStatus("error");
-    document.head.appendChild(script);
-  }, []);
+export default async function GoogleReviews() {
+  const configured = Boolean(API_KEY && PLACE_ID);
+  const place = configured ? await fetchPlaceDetails() : null;
+  const reviews = place?.reviews ?? [];
+  const rating = place?.rating ?? null;
+  const total = place?.userRatingCount ?? null;
 
   return (
     <section className="border-t border-white/10 bg-[#0a0f1c] px-6 py-20">
@@ -136,7 +72,7 @@ export default function GoogleReviews() {
             What clients say.
           </h2>
 
-          {status === "ready" && rating !== null && (
+          {rating !== null && (
             <div className="mt-5 flex flex-col items-center gap-1.5">
               <div className="flex items-center gap-2">
                 <span className="text-2xl font-extrabold text-white">{rating.toFixed(1)}</span>
@@ -156,65 +92,58 @@ export default function GoogleReviews() {
           </a>
         </div>
 
-        {status === "loading" && (
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[0, 1, 2].map((i) => (
-              <div key={i} className="h-40 animate-pulse rounded-2xl border border-white/10 bg-white/[0.03]" />
-            ))}
-          </div>
-        )}
-
-        {status === "unconfigured" && (
+        {!configured && (
           <p className="mx-auto max-w-md text-center text-sm text-white/40">
             Reviews will show up here automatically once this is connected to Google.
           </p>
         )}
 
-        {status === "error" && (
+        {configured && !place && (
           <p className="mx-auto max-w-md text-center text-sm text-white/40">
             Couldn&apos;t load reviews right now. In the meantime, you can still leave one above.
           </p>
         )}
 
-        {status === "ready" && reviews.length > 0 && (
+        {configured && place && reviews.length > 0 && (
           <>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {reviews.slice(0, 6).map((r, i) => (
-                <div
-                  key={i}
-                  className="flex flex-col gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-6"
-                >
-                  <div className="flex items-center gap-3">
-                    {r.profile_photo_url ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={r.profile_photo_url}
-                        alt={r.author_name}
-                        width={36}
-                        height={36}
-                        className="rounded-full"
-                        referrerPolicy="no-referrer"
-                      />
-                    ) : (
-                      <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-xs font-bold text-white/70">
-                        {r.author_name.charAt(0)}
+              {reviews.slice(0, 6).map((r, i) => {
+                const name = r.authorAttribution?.displayName ?? "Google user";
+                return (
+                  <div
+                    key={i}
+                    className="flex flex-col gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-6"
+                  >
+                    <div className="flex items-center gap-3">
+                      {r.authorAttribution?.photoUri ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={r.authorAttribution.photoUri}
+                          alt={name}
+                          width={36}
+                          height={36}
+                          className="rounded-full"
+                          referrerPolicy="no-referrer"
+                        />
+                      ) : (
+                        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-xs font-bold text-white/70">
+                          {name.charAt(0)}
+                        </div>
+                      )}
+                      <div>
+                        <div className="text-sm font-semibold text-white">{name}</div>
+                        <div className="text-[11px] text-white/40">{r.relativePublishTimeDescription}</div>
                       </div>
-                    )}
-                    <div>
-                      <div className="text-sm font-semibold text-white">{r.author_name}</div>
-                      <div className="text-[11px] text-white/40">{r.relative_time_description}</div>
                     </div>
+                    <Stars rating={r.rating} />
+                    <p className="line-clamp-5 text-[13px] leading-relaxed text-white/60">{r.text?.text}</p>
                   </div>
-                  <Stars rating={r.rating} />
-                  <p className="line-clamp-5 text-[13px] leading-relaxed text-white/60">{r.text}</p>
-                </div>
-              ))}
+                );
+              })}
             </div>
             <p className="mt-8 text-center text-[11px] text-white/30">Reviews via Google</p>
           </>
         )}
-
-        <div ref={mapNodeRef} className="hidden" aria-hidden="true" />
       </div>
     </section>
   );
