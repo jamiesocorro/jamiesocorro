@@ -2,6 +2,7 @@ import Link from "next/link";
 import ImageWithSkeleton from "./components/ImageWithSkeleton";
 import CodeCard from "./components/CodeCard";
 import ProjectsSection, { type Project } from "./components/ProjectsSection";
+import GoogleReviews from "./components/GoogleReviews";
 import SiteNav from "./components/SiteNav";
 import SiteFooter from "./components/SiteFooter";
 import { basePath } from "./base-path";
@@ -431,6 +432,8 @@ export default function Home() {
       </section>
 
       <ProjectsSection projects={projects} />
+
+      <GoogleReviews />
 
       <SiteFooter />
     </div>
