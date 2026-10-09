@@ -67,15 +67,15 @@ const projects: Project[] = [
   },
   {
     name: "Vince Catacutan Films",
-    href: "https://vcfilms.vercel.app/",
+    href: "https://vincecatacutan.com/",
     img: `${basePath}/VinceCatacutanFilms.png`,
     alt: "Vince Catacutan Films",
     tagline: "Wedding videography portfolio",
     description: (
       <>
         Vince Catacutan Films is a wedding videography studio (&ldquo;honest moments, told beautifully&rdquo;) showcasing featured films, a full film library, and booking inquiries for couples. Visit{" "}
-        <a href="https://vcfilms.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">
-          vcfilms.vercel.app
+        <a href="https://vincecatacutan.com/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">
+          vincecatacutan.com
         </a>
         . <span className="italic text-amber-300/80">Site is complete, just waiting on the client&apos;s confirmation to deploy.</span>
       </>
