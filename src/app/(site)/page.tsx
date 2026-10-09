@@ -77,7 +77,7 @@ const projects: Project[] = [
         <a href="https://vincecatacutan.com/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">
           vincecatacutan.com
         </a>
-        . <span className="italic text-amber-300/80">Site is complete, just waiting on the client&apos;s confirmation to deploy.</span>
+        .
       </>
     ),
     position: "Senior Frontend Developer",
