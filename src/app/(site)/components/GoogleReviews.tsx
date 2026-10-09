@@ -104,6 +104,12 @@ export default async function GoogleReviews() {
           </p>
         )}
 
+        {configured && place && reviews.length === 0 && (
+          <p className="mx-auto max-w-md text-center text-sm text-white/40">
+            No reviews yet — be the first to leave one above.
+          </p>
+        )}
+
         {configured && place && reviews.length > 0 && (
           <>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
