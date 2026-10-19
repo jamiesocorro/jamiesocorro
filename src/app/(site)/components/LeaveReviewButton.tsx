@@ -2,16 +2,23 @@
 
 import { useState } from "react";
 
-export default function LeaveReviewButton() {
+const buttonClasses =
+  "mt-6 inline-flex items-center gap-2 rounded-full bg-emerald-400 px-6 py-3 text-sm font-semibold text-[#0a0f1c] shadow-lg transition-transform hover:-translate-y-0.5 hover:shadow-xl";
+
+export default function LeaveReviewButton({ reviewUrl }: { reviewUrl: string | null }) {
   const [open, setOpen] = useState(false);
+
+  if (reviewUrl) {
+    return (
+      <a href={reviewUrl} target="_blank" rel="noopener noreferrer" className={buttonClasses}>
+        Leave a Google Review
+      </a>
+    );
+  }
 
   return (
     <>
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        className="mt-6 inline-flex items-center gap-2 rounded-full bg-emerald-400 px-6 py-3 text-sm font-semibold text-[#0a0f1c] shadow-lg transition-transform hover:-translate-y-0.5 hover:shadow-xl"
-      >
+      <button type="button" onClick={() => setOpen(true)} className={buttonClasses}>
         Leave a Google Review
       </button>
 

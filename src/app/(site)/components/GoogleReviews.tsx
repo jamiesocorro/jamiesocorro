@@ -3,6 +3,8 @@ import LeaveReviewButton from "./LeaveReviewButton";
 const API_KEY = process.env.GOOGLE_PLACES_API_KEY;
 const PLACE_ID = process.env.GOOGLE_PLACE_ID;
 
+const reviewUrl = PLACE_ID ? `https://search.google.com/local/writereview?placeid=${PLACE_ID}` : null;
+
 type GoogleReview = {
   authorAttribution?: { displayName: string; photoUri?: string };
   rating: number;
@@ -80,7 +82,7 @@ export default async function GoogleReviews() {
             </div>
           )}
 
-          <LeaveReviewButton />
+          <LeaveReviewButton reviewUrl={reviewUrl} />
         </div>
 
         {!configured && (
