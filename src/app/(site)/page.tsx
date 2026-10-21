@@ -142,6 +142,44 @@ const projects: Project[] = [
     technologies: "NextJS, ReactJS, TailwindCSS",
   },
   {
+    name: "FurLab",
+    href: "https://myfurlab.com/",
+    img: `${basePath}/FurLab.png`,
+    alt: "FurLab",
+    tagline: "Pet hotel, grooming & daycare booking platform",
+    description: (
+      <>
+        FurLab is a pet hotel, grooming, and daycare business in Pila, Laguna (&ldquo;a home away from home for your furbabies&rdquo;), also running a café for owners while they wait. The site covers online booking, a shop, booking tracking, and customer account and admin panels. Visit{" "}
+        <a href="https://myfurlab.com/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">
+          myfurlab.com
+        </a>
+        .
+      </>
+    ),
+    position: "Senior Frontend Developer",
+    year: "2026",
+    technologies: "NextJS, ReactJS, TailwindCSS",
+  },
+  {
+    name: "CarLab",
+    href: "https://carlabph.com/",
+    img: `${basePath}/CarLab.png`,
+    alt: "CarLab",
+    tagline: "Car wash & auto-detailing booking website",
+    description: (
+      <>
+        CarLab is a car wash and auto-detailing business in Labuin, Pila, offering ceramic coating and PPF alongside an air-conditioned lounge for customers to wait in. The site covers services and online slot booking. Visit{" "}
+        <a href="https://carlabph.com/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">
+          carlabph.com
+        </a>
+        .
+      </>
+    ),
+    position: "Senior Frontend Developer",
+    year: "2026",
+    technologies: "NextJS, ReactJS, TailwindCSS",
+  },
+  {
     name: "PPL (Professional People's Lab)",
     href: "https://www.ppl.com.ph/",
     img: `${basePath}/PplCompany.png`,
